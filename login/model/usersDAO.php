@@ -54,7 +54,7 @@ class usersDAO
     $usrId = "";
 
     while ($row = $stmt->fetch()) {
-      $obj = new users($row['id'], $row['username'], $row['pword'], $row['given_name'], $row['account_id'], $row['email'], $row['pin'], $row['userid']);
+      $obj = new users($row['id'], $row['username'], $row['pword'], $row['given_name'], $row['account_id'], $row['email'], $row['pin'], $row['userid'], $row['creditscore']);
     }
 
     if (!empty($obj)) {
@@ -84,7 +84,7 @@ class usersDAO
     $usrId = "";
 
     while ($row = $stmt->fetch()) {
-      $obj = new users($row['id'], $row['username'], $row['pword'], $row['given_name'], $row['account_id'], $row['email'], $row['pin'], $row['userid']);
+      $obj = new users($row['id'], $row['username'], $row['pword'], $row['given_name'], $row['account_id'], $row['email'], $row['pin'], $row['userid'], $row['creditscore']);
     }
 
     if (!empty($obj)) {
