@@ -9,8 +9,9 @@ class users {
     private $email;
     private $pin;
     private $userid;
+    private $creditscore;
 
-    public function __construct($id, $username, $password, $name, $acc_Id, $email, $pin, $userid) {
+    public function __construct($id, $username, $password, $name, $acc_Id, $email, $pin, $userid, $creditscore) {
         $this->id = $id;
         $this->username = $username;
         $this->password = $password;
@@ -19,6 +20,7 @@ class users {
         $this->email = $email;
         $this->pin = $pin;
         $this->userid = $userid;
+        $this->creditscore = $creditscore;
     }
 
     public function getId(){
@@ -51,6 +53,10 @@ class users {
 
     public function getUserid() {
         return $this->userid;
+    }
+
+    public function getCreditscore() {
+        return $this->creditscore;
     }
 }
 ?>
