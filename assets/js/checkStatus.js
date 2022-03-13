@@ -2,6 +2,10 @@ function changeNavBar() {
   var optionalLogin = document.getElementsByClassName("optionalLogin")[0];
   var optionalLogout = document.getElementsByClassName("optionalLogout")[0];
   var optionalProfile = document.getElementsByClassName("optionalProfile")[0];
+  var optionalPostNewBlog = document.getElementsByClassName(
+    "optionalPostNewBlog"
+  )[0];
+  var optionalMealPrep = document.getElementsByClassName("optionalMealPrep")[0];
   var request = new XMLHttpRequest();
 
   var url = "backendProcess/checkStatus.php";
@@ -14,11 +18,15 @@ function changeNavBar() {
         optionalLogin.id = "";
         optionalLogout.id = "optionalLogout";
         optionalProfile.id = "optionalProfile";
+        optionalPostNewBlog.id = "optionalPostNewBlog";
+        optionalMealPrep.id = "optionalMealPrep";
       } else {
         //display logged in page (hide login/sign )
         optionalLogin.id = "optionalLogin";
         optionalLogout.id = "";
         optionalProfile.id = "";
+        optionalPostNewBlog.id = "";
+        optionalMealPrep.id = "";
       }
     }
   };
