@@ -1,0 +1,393 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Sign Up</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/hamburgers.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        #optionalLogin,
+        #optionalLogout,
+        #optionalProfile,
+        #optionalPostNewBlog,
+        #optionalMealPrep {
+            display: none;
+        }
+
+        #usernameAvail {
+            color: red;
+            font-size: x-small;
+        }
+
+        .mainForm {
+            margin-top: 50px;
+            background-color: white;
+            border: 2px solid darkgreen;
+            border-radius: 10%;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            margin-bottom: 50px;
+        }
+
+        #signup {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .createAcc {
+            color: darkgreen;
+            font-size: 30px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+
+        }
+
+        body {
+            background-image: url(assets/img/gallery/header-meal-prep-three-day.jpg);
+        }
+
+        .head {
+            background-color: white;
+        }
+
+        #termsOfService {
+            color: blue;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            transition: opacity 500ms;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .overlay:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup {
+            margin: 300px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            width: 30%;
+            position: relative;
+            transition: all 5s ease-in-out;
+        }
+
+        .popup .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            transition: all 200ms;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .popup .content {
+            max-height: 30%;
+            overflow: auto;
+        }
+
+        .back {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body onload="changeNavBar()">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area head">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="#">Search</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="recipeSearch.html">Recipe</a></li>
+                                                        <li><a href="supermarketSearch.html">Supermarket</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="nutriAnalysis.html">Nutrition Analysis</a></li>
+                                                <li class="optionalMealPrep" id=""><a href="mealPrep.html">Meal Prep</a></li>
+                                                <li><a href="blog.html">Blog Posts</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="blog.html">Blog</a></li>
+                                                        <li class="optionalPostNewBlog" id=""><a href="postNewBlog.html">Post New Blog</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
+                                                </li>
+                                                <li class="optionalLogout" id=""><a href="#">Log Out</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Header-btn -->
+                                    <div class="header-right-btn d-none d-lg-block ml-40">
+                                        <a href="profile.html" class="btn optionalProfile" id="">My Profile</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <div class="container-fluid contain">
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-3 mainForm">
+                    <p class="createAcc">Create Your Account</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <small id="usernameAvail"></small>
+                            <input type="text" class="form-control" id="Username" onkeyup="usernameAvail()">
+                        </div>
+                        <div class="form-group">
+                            <label for="Password1">Password</label>
+                            <input type="password" class="form-control" id="Password1" onkeyup="pwdCheck()">
+                            <small id="pwdCheckResult"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="Password2">Confirm Password</label>
+                            <input type="password" class="form-control" id="Password2" onkeyup="pwdMatch()">
+                            <small id="pwdMatchResult"></small>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeToTerms">
+                            I agree to the
+                            <a class="button" href="#popup1" id="termsOfService">Terms of Service</a>
+                            <div id="popup1" class="overlay">
+                                <div class="popup">
+                                    <h2>Terms of Service</h2>
+                                    <a class="close" href="#">&times;</a>
+                                    <div class="content">
+                                        The nutritional advice given in this website only serves as a guide for you.
+                                        Please seek professional nutritionist for accurate and personalized nutritional
+                                        advice.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="login.html"><small class="back">Back to login page</small></a><br><br>
+                        </div>
+                        <a type="button" class="btn btn-primary" onclick="overallCheck()">Sign Up</a>
+                    </form>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function usernameAvail() {
+            var request = new XMLHttpRequest()
+
+            var username = document.getElementById("Username").value
+            var ret = document.getElementById("usernameAvail")
+            var details = "username=" + username
+            var url = "backendProcess/usernameAvailCheck.php?" + details
+
+            request.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var result = this.responseText //string
+                    if (result == 'false') {
+                        ret.innerHTML = '*Username is taken!'
+                    } else(
+                        ret.innerHTML = ''
+                    )
+                }
+            }
+
+            request.open("GET", url, true)
+            request.send()
+
+        }
+
+        function pwdCheck() {
+            var currentPwd = document.getElementById("Password1").value
+            result = document.getElementById("pwdCheckResult")
+            ret = ''
+            numCheck = 1
+            for (ch of currentPwd) {
+                if (!isNaN(ch)) {
+                    numCheck *= 0
+                }
+            }
+            if (currentPwd.length==0){
+                ret = ''
+            } else if (currentPwd.length <= 8 && numCheck != 0) {
+                ret = ret + '<span style="color:red;">There must be more than 8 char & at least 1 number</span>'
+            } else if (currentPwd.length <= 8) {
+                ret = ret + '<span style="color:red;">There must be more than 8 characters</span>'
+            } else if (numCheck != 0) {
+                ret = ret + '<span style="color:red;">There must be at least 1 number</span>'
+            }
+
+            if (ret != '') {
+                return result.innerHTML = ret
+            } else if(ret == '' & currentPwd.length>0) {
+                return result.innerHTML = '<span style="color:green;">Password is eligible</span>'
+            } else{
+                result.innerHTML = ''
+            }
+        }
+
+        function pwdMatch(currentPwd, cfmPwd) {
+            var currentPwd = document.getElementById("Password1").value
+            var cfmPwd = document.getElementById("Password2").value
+            var result = document.getElementById("pwdMatchResult")
+            if (currentPwd !== cfmPwd && cfmPwd.length>0) {
+                return result.innerHTML = "<span style='color:red;'>Passwords do not match</span>"
+            } else if(currentPwd == cfmPwd && cfmPwd.length>0){
+                return result.innerHTML = "<span style='color:green;'>Passwords matched</span>"
+            } else{
+                return result.innerHTML = ''
+            }
+        }
+
+        function overallCheck() {
+            var username = document.getElementById("Username").value
+            var usernameRet = document.getElementById("usernameAvail")
+            var pwd = document.getElementById("Password2").value
+            var pwdCheckResult = document.getElementById("pwdCheckResult").innerText
+            var pwdMatchResult = document.getElementById("pwdMatchResult").innerText
+            var agreeToTerms = document.getElementById("agreeToTerms")
+
+            if(agreeToTerms.checked == false){
+                alert('You have to agree with the Terms of Service to complete the sign up.')
+            }
+
+            if (usernameRet.innerHTML == '' && username.length > 0 && pwdCheckResult == 'Password is eligible' &&
+                pwdMatchResult == 'Passwords matched' && agreeToTerms.checked == true) {
+                var request = new XMLHttpRequest()
+
+                console.log('wow')
+                var details = "username=" + username + "&pwd=" + pwd
+                var url = "backendProcess/addAcc.php?" + details
+
+                request.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var result = this.responseText //string
+                        if (result=='true') {
+                            location.href = "profile.html" //tentative
+                        } else {
+                            alert("Please try again later!")
+                        }
+                    }
+                }
+
+                request.open("GET", url, true)
+                request.send()
+            }
+        }
+    </script>
+
+    <!-- JS here -->
+    <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+</body>
+
+</html>
