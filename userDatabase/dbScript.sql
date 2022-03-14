@@ -32,6 +32,11 @@ CREATE TABLE IF NOT EXISTS `userProfile` (
     `tbankacc` varchar (100),
     `tbankid` varchar(100),
     `tbankpin` varchar(100),
+    `annualincome` varchar(100),
+    `homeownership` varchar(100),
+    `monthlydebt` varchar(100),
+    `monthlycreditlimit` varchar(100),
+    `mortacc` varchar(100),
     PRIMARY KEY (`username`)
 ) ;
 -- --------------------------------------------------------

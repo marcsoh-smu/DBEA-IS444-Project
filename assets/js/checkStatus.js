@@ -18,14 +18,12 @@ function changeNavBar() {
         optionalLogin.id = "";
         optionalLogout.id = "optionalLogout";
         optionalProfile.id = "optionalProfile";
-        optionalPostNewBlog.id = "optionalPostNewBlog";
         optionalMealPrep.id = "optionalMealPrep";
       } else {
         //display logged in page (hide login/sign )
         optionalLogin.id = "optionalLogin";
         optionalLogout.id = "";
         optionalProfile.id = "";
-        optionalPostNewBlog.id = "";
         optionalMealPrep.id = "";
       }
     }

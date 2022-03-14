@@ -12,7 +12,7 @@
     if($result) {
         //sign up is a success->user acc is added to database ->proceed to setting up the profile page
         $userProfileDAO = new userProfileDAO;
-        $userProfile = new userProfile($username, NULL, NULL, NULL, NULL, NULL, NULL);
+        $userProfile = new userProfile($username, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
         $userProfileDAO->add($userProfile);
         session_start();
         $_SESSION['username']=$username;

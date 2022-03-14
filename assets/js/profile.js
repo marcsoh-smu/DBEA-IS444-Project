@@ -7,6 +7,11 @@ function retrieve() {
   retrieveTbankacc();
   retrieveTbankid();
   retrieveTbankpin();
+  retrieveAnnualincome();
+  retrieveHomeownership();
+  retrieveMonthlydebt();
+  retrieveMonthlycreditlimit();
+  retrieveMortacc();
 }
 
 function retrieveUsername() {
@@ -145,25 +150,105 @@ function retrieveTbankpin() {
   request.send();
 }
 
-function bmiCalculator() {
-  var height = Number(document.getElementById("Height").value);
-  var weight = Number(document.getElementById("Weight").value);
-  var result = document.getElementById("bmi");
-  if (height == "" || weight == "") {
-    result.innerHTML = "current BMI: ";
-  } else {
-    var bmi = weight / height ** 2;
-    var bmi = bmi.toFixed(1);
-    if (bmi < 18.5) {
-      result.innerHTML = "current BMI: " + bmi + "(Underweight)";
-    } else if (bmi < 23) {
-      result.innerHTML = "current BMI: " + bmi + "(Healthy)";
-    } else if (bmi < 27.5) {
-      result.innerHTML = "current BMI: " + bmi + "(Mildly Obese)";
-    } else {
-      result.innerHTML = "current BMI: " + bmi + "(Extremely Obese)";
+function retrieveAnnualincome() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var annualIncome = document.getElementById("annualIncome");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=annualIncome&" + details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      annualIncome.value = result;
     }
-  }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+}
+
+function retrieveHomeownership() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var homeOwnership = document.getElementById("homeOwnership");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=homeOwnership&" + details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      homeOwnership.value = result;
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+}
+
+function retrieveMonthlydebt() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var monthlyDebt = document.getElementById("monthlyDebt");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=monthlyDebt&" + details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      monthlyDebt.value = result;
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+}
+
+function retrieveMonthlycreditlimit() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var monthlyCreditLimit = document.getElementById("monthlyCreditLimit");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=monthlyCreditLimit&" +
+    details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      monthlyCreditLimit.value = result;
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+}
+
+function retrieveMortacc() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var mortAcc = document.getElementById("mortAcc");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=mortAcc&" + details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      mortAcc.value = result;
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
 }
 
 function setUpProfile() {
@@ -174,6 +259,13 @@ function setUpProfile() {
   var tBankAcc = document.getElementById("tBankAcc").value;
   var tBankID = document.getElementById("tBankID").value;
   var tBankPIN = document.getElementById("tBankPIN").value;
+  var creditScore = document.getElementById("creditScore").value;
+  var interestRate = document.getElementById("interestRate").value;
+  var annualIncome = document.getElementById("annualIncome").value;
+  var homeOwnership = document.getElementById("homeOwnership").value;
+  var monthlyDebt = document.getElementById("monthlyDebt").value;
+  var monthlyCreditLimit = document.getElementById("monthlyCreditLimit").value;
+  var mortAcc = document.getElementById("mortAcc").value;
 
   var details =
     "username=" +
@@ -185,7 +277,21 @@ function setUpProfile() {
     "&tBankID=" +
     tBankID +
     "&tBankPIN=" +
-    tBankPIN;
+    tBankPIN +
+    "&creditScore=" +
+    creditScore +
+    "&interestRate=" +
+    interestRate +
+    "&annualIncome=" +
+    annualIncome +
+    "&homeOwnership=" +
+    homeOwnership +
+    "&monthlyDebt=" +
+    monthlyDebt +
+    "&monthlyCreditLimit=" +
+    monthlyCreditLimit +
+    "&mortAcc=" +
+    mortAcc;
   var url = "backendProcess/setUpProfile.php?" + details;
 
   request.onreadystatechange = function () {

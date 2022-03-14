@@ -7,9 +7,14 @@
     private $tbankacc;
     private $tbankid;
     private $tbankpin;
+    private $annualincome;
+    private $homeownership;
+    private $monthlydebt;
+    private $monthlycreditlimit;
+    private $mortacc;
 
     // constructor
-    public function __construct($username, $email, $creditscore, $interestrate, $tbankacc, $tbankid, $tbankpin) {
+    public function __construct($username, $email, $creditscore, $interestrate, $tbankacc, $tbankid, $tbankpin, $annualincome, $homeownership, $monthlydebt, $monthlycreditlimit, $mortacc) {
         $this->username = $username;
         $this->email = $email;
         $this->creditscore = $creditscore;
@@ -17,6 +22,11 @@
         $this->tbankacc = $tbankacc;
         $this->tbankid = $tbankid;
         $this->tbankpin = $tbankpin; 
+        $this->annualincome = $annualincome; 
+        $this->homeownership = $homeownership; 
+        $this->monthlydebt = $monthlydebt; 
+        $this->monthlycreditlimit = $monthlycreditlimit; 
+        $this->mortacc = $mortacc; 
     }
 
     public function getUsername() {
@@ -45,6 +55,26 @@
 
     public function getTbankpin() {
         return $this->tbankpin;
+    }
+
+    public function getAnnualincome() {
+        return $this->annualincome;
+    }
+    
+    public function getHomeownership() {
+        return $this->homeownership;
+    }
+
+    public function getMonthlydebt() {
+        return $this->monthlydebt;
+    }
+
+    public function getMonthlycreditlimit() {
+        return $this->monthlycreditlimit;
+    }
+
+    public function getMortacc() {
+        return $this->mortacc;
     }
    
 }

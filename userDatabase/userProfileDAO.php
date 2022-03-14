@@ -12,7 +12,12 @@ class userProfileDAO {
                     interestrate,
                     tbankacc,
                     tbankid,
-                    tbankpin
+                    tbankpin,
+                    annualincome,
+                    homeownership,
+                    monthlydebt,
+                    monthlycreditlimit,
+                    mortacc
                 FROM userProfile
                 WHERE username = :username"; 
         $stmt = $conn->prepare($sql);
@@ -29,7 +34,12 @@ class userProfileDAO {
                      $row['interestrate'],
                      $row['tbankacc'],
                      $row['tbankid'],
-                     $row['tbankpin']];
+                     $row['tbankpin'],
+                     $row['annualincome'],
+                     $row['homeownership'],
+                     $row['monthlydebt'],
+                     $row['monthlycreditlimit'],
+                     $row['mortacc']];
         }
 
         $stmt = null;
@@ -68,8 +78,8 @@ class userProfileDAO {
     public function add($profile) {
         $connMgr = new ConnectionManager();
         $pdo = $connMgr->getConnection();
-        $sql = 'insert into userProfile (username, email, creditscore, interestrate, tbankacc, tbankid, tbankpin)
-                 values (:username, :email, :creditscore, :interestrate, :tbankacc, :tbankid, :tbankpin)';
+        $sql = 'insert into userProfile (username, email, creditscore, interestrate, tbankacc, tbankid, tbankpin, annualincome, homeownership, monthlydebt, monthlycreditlimit, mortacc)
+                 values (:username, :email, :creditscore, :interestrate, :tbankacc, :tbankid, :tbankpin, :annualincome, :homeownership, :monthlydebt, :monthlycreditlimit, :mortacc)';
         $isAddOK = FALSE;
         try { 
             $stmt = $pdo->prepare($sql); 
@@ -81,6 +91,11 @@ class userProfileDAO {
             $tbankacc = $profile->getTbankacc();
             $tbankid = $profile->getTbankid();
             $tbankpin = $profile->getTbankpin();
+            $annualincome = $profile->getAnnualincome();
+            $homeownership = $profile->getHomeownership();
+            $monthlydebt = $profile->getMonthlydebt();
+            $monthlycreditlimit = $profile->getMonthlycreditlimit();
+            $mortacc = $profile->getMortacc();
             
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -89,6 +104,11 @@ class userProfileDAO {
             $stmt->bindParam(':tbankacc', $tbankacc, PDO::PARAM_STR);
             $stmt->bindParam(':tbankid', $tbankid, PDO::PARAM_STR);
             $stmt->bindParam(':tbankpin', $tbankpin, PDO::PARAM_STR);
+            $stmt->bindParam(':annualincome', $annualincome, PDO::PARAM_STR);
+            $stmt->bindParam(':homeownership', $homeownership, PDO::PARAM_STR);
+            $stmt->bindParam(':monthlydebt', $monthlydebt, PDO::PARAM_STR);
+            $stmt->bindParam(':monthlycreditlimit', $monthlycreditlimit, PDO::PARAM_STR);
+            $stmt->bindParam(':mortacc', $mortacc, PDO::PARAM_STR);
         
             if ($stmt->execute()) {
                 $isAddOK = TRUE;
@@ -116,6 +136,11 @@ class userProfileDAO {
         $tbankacc = $profile->getTbankacc();
         $tbankid = $profile->getTbankid();
         $tbankpin = $profile->getTbankpin();
+        $annualincome = $profile->getAnnualincome();
+        $homeownership = $profile->getHomeownership();
+        $monthlydebt = $profile->getMonthlydebt();
+        $monthlycreditlimit = $profile->getMonthlycreditlimit();
+        $mortacc = $profile->getMortacc();
 
         $sql = "UPDATE
                     userProfile
@@ -125,7 +150,12 @@ class userProfileDAO {
                     interestrate = :interestrate,
                     tbankacc = :tbankacc,
                     tbankid = :tbankid,
-                    tbankpin = :tbankpin
+                    tbankpin = :tbankpin,
+                    annualincome = :annualincome,
+                    homeownership = :homeownership,
+                    monthlydebt = :monthlydebt,
+                    monthlycreditlimit = :monthlycreditlimit,
+                    mortacc = :mortacc
                 WHERE 
                     username = :username";
 
@@ -137,6 +167,11 @@ class userProfileDAO {
         $stmt->bindParam(':tbankacc', $tbankacc, PDO::PARAM_STR);
         $stmt->bindParam(':tbankid', $tbankid, PDO::PARAM_STR);
         $stmt->bindParam(':tbankpin', $tbankpin, PDO::PARAM_STR);
+        $stmt->bindParam(':annualincome', $annualincome, PDO::PARAM_STR);
+        $stmt->bindParam(':homeownership', $homeownership, PDO::PARAM_STR);
+        $stmt->bindParam(':monthlydebt', $monthlydebt, PDO::PARAM_STR);
+        $stmt->bindParam(':monthlycreditlimit', $monthlycreditlimit, PDO::PARAM_STR);
+        $stmt->bindParam(':mortacc', $mortacc, PDO::PARAM_STR);
 
         $status = $stmt->execute();
         
