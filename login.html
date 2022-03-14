@@ -31,7 +31,7 @@
         .mainForm{
             margin-top:110px;
             background-color:white;
-            border:2px solid darkgreen;
+            border:2px solid #23819d;
             border-radius:10%;
             padding-top: 10px;
             padding-bottom:30px;
@@ -43,11 +43,13 @@
         .login{
             margin-top:20px;
             margin-bottom:20px;
-            color:darkgreen;
+            color:#23819d;
             font-size:30px;
         }
         body{
-            background-image: url(assets/img/gallery/header-meal-prep-three-day.jpg); 
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url(assets/img/gallery/loginbg.jpg); 
         }
         .head{
             background-color:white;
@@ -77,21 +79,32 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/narwhal.png" width = 90% height = 90% alt=""></a>
+                                    <a href="index.html">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h1>NarBank</h1>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <img src="assets/img/logo/narwhal_logo.png" width = 96% height = 96% alt="">
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
+                            
+                            
                             <div class="col-xl-10 col-lg-10">
                                 <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                     <!-- Main-menu -->
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
-                                            <ul id="navigation">                                                                                          
+                                            <ul id="navigation">                                                                                        
                                                 <li><a href="index.html">Home</a></li>
                                                 <li><a href="#">Credit Score</a>
-                                                    <ul class="submenu">
+                                                    <!-- <ul class="submenu">
                                                         <li><a href="recipeSearch.html">Recipe</a></li>
                                                         <li><a href="supermarketSearch.html">Supermarket</a></li>
-                                                    </ul>
+                                                    </ul> -->
                                                 </li>
                                                 <li><a href="nutriAnalysis.html">Shop</a></li>
                                                 <li class="optionalMealPrep" id=""><a href="mealPrep.html">Bills</a></li>
@@ -123,8 +136,13 @@
     <main>
         <div class="container-fluid contain">
             <div class="row">
-                <div class="col-8"></div>
-                <div class="col-3 mainForm">
+                <div class="col-sm-8">
+                    <div>
+                        <h1>Hello</h1>
+                    </div>
+                    
+                </div>
+                <div class="col-sm-3 mainForm">
                     <p class="login">Log In</p>
                     <form>
                         <div class="form-group">
@@ -139,7 +157,7 @@
                         <a type="button" class="btn btn-primary" onclick="login()">Log In</a>
                     </form>
                 </div>
-                <div class="col-1"></div>
+                <!-- <div class="col-1"></div> -->
             </div>
         </div>
     </main>
