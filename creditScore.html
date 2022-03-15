@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Profile</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/hamburgers.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .contain{
+            background-color:white;
+            border:2px solid darkgreen;
+        }
+        .mainForm{
+            background-color:white;
+            padding-top: 10px;
+            padding-bottom:30px;
+        }
+        #signup{
+            color:blue;
+            text-decoration:underline;
+        }
+        .profileSetUp{
+            color:rgb(2, 75, 2);
+            font-size:30px;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        body{
+            background-image: url(assets/img/gallery/header-meal-prep-three-day.jpg);
+        }
+        .head{
+            background-color:white;
+        }
+        .setUpButton{
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+<body onload="retrieve()">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html"><img src="assets/img/logo/narwhal.png" width = 90% height = 90% alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">                                                                                          
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="#">Credit Score</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="recipeSearch.html">Recipe</a></li>
+                                                        <li><a href="supermarketSearch.html">Supermarket</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="nutriAnalysis.html">Shop</a></li>
+                                                <li class="optionalMealPrep" id=""><a href="mealPrep.html">Bills</a></li>
+                    
+                                                <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
+                                                </li>
+                                                <li class="optionalLogout" id="" onclick="logout()"><a href="#">Log
+                                                        Out</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Header-btn -->
+                                    <div class="header-right-btn d-none d-lg-block ml-40">
+                                        <a href="profile.html" class="btn optionalProfile" id="">My Profile</a>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6 contain">
+                    <p class="profileSetUp">Set Up Your Profile</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <input type="text" class="form-control" name="Username" id="Username" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="email" id="email" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tBankAcc">tBank Account</label>
+                            <input type="text" class="form-control" name="tBankAcc" id="tBankAcc" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tBankID">tBank ID</label>
+                            <input type="text" class="form-control" name="tBankID" id="tBankID" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tBankPIN">tBank PIN</label>
+                            <input type="password" class="form-control" name="tBankPIN" id="tBankPIN" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="annualincome">Annual Income</label>
+                            <input type="text" class="form-control" name="annualincome" id="annualIncome" value="">
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="homeownership">Home Ownership</label>
+                            <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="monthlydebt">Monthly Debt</label>
+                            <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="monthlycreditlimit">Monthly Credit Limit</label>
+                            <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mortacc">Mortgage Account</label>
+                            <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loanamt">Loan Amount</label>
+                            <input type="text" class="form-control" name="mortacc" id="loanamt" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loanterm">Loan Term</label>
+                            <input type="text" class="form-control" name="mortacc" id="loanterm" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interestRate">Interest Rate</label>
+                            <input type="text" class="form-control" name="interestRate" id="interestRate" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="creditScore">Credit Score</label>
+                            <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="setUpButton">
+                            <a type="button" class="btn btn-primary" onclick="setUpProfile()">Save</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- JS here -->
+    <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
+    <script type="text/javascript" src="./assets/js/logout.js"></script>
+    <script type="text/javascript" src="./assets/js/profile.js"></script>
+    <script type="text/javascript" src="./assets/js/creditScoreCal.js"></script>
+    
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- counter , waypoint, Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+    
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+</body>
+</html>
