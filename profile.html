@@ -179,72 +179,52 @@
                             <!--allow user to change this, put the original value in the field-->
                         </div>
 
-                        <div class="form-group">
-                            <label for="annualincome">Annual Income</label>
-                            <input type="text" class="form-control" name="annualincome" id="annualIncome" value="">
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="homeownership">Home Ownership</label>
-                            <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="monthlydebt">Monthly Debt</label>
-                            <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="monthlycreditlimit">Monthly Credit Limit</label>
-                            <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mortacc">Mortgage Account</label>
-                            <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="creditScore">Credit Score</label>
-                            <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="interestRate">Interest Rate</label>
-                            <input type="text" class="form-control" name="interestRate" id="interestRate" value="">
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="loanAmount">Loan Amount</label>
-                            <input type="text" class="form-control" name="loanAmount" id="loanAmount" value="">
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="numberOfMonths">Number of Repayment Months</label>
-                            <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="">
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
                         <div class="setUpButton">
                             <a type="button" class="btn btn-primary" onclick="setUpProfile()">Save</a>
                         </div>
+
+                        <h3>Other Information:</h3>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                Annual Income: <input type="text" class="form-control" name="annualincome" id="annualIncome" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Monthly Debt: <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" disabled>
+                              </div>
+                            </div>
+                          </div> <br> 
+
+                          <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                Monthly Credit Limit:  <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Mortgage Account(s): <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
+                              </div>
+                            </div>
+                          </div><br>
+
+                          <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                Interest Rate:  <input type="text" class="form-control" name="interestRate" id="interestRate" value="" disabled>
+                              </div>
+                              <div class="col order-5">
+                                Loan Amount: <input type="text" class="form-control" name="loanAmount" id="loanAmount" value="" disabled>
+                              </div>
+                              <div class="col order-1">
+                                Number of Repayment Months: <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="" disabled>
+                              </div>
+                            </div>
+                          </div> <br>
                     </form>
                 </div>
                 <div class="col-3"></div>
