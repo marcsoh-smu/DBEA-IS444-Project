@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Profile</title>
+    <title>NarBank - Profile</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/narwhal_logo_icon.ico">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
     <style>
         .contain{
             background-color:white;
-            border:2px solid darkgreen;
+            border:2px solid #23819d;
         }
         .mainForm{
             background-color:white;
@@ -37,19 +37,24 @@
             text-decoration:underline;
         }
         .profileSetUp{
-            color:rgb(2, 75, 2);
+            color:#23819d;
             font-size:30px;
             margin-top:20px;
             margin-bottom:20px;
         }
         body{
-            background-image: url(assets/img/gallery/header-meal-prep-three-day.jpg);
+            background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url(assets/img/gallery/profile.jpg);
         }
         .head{
             background-color:white;
         }
         .setUpButton{
             margin-bottom:20px;
+        }
+        .main-header{
+            background: white;
         }
     </style>
 </head>
@@ -76,27 +81,43 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/narwhal.png" width = 90% height = 90% alt=""></a>
+                                    <a href="home.html">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h2>NarBank</h2>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <img src="assets/img/logo/narwhal_logo.png" width = 80% height = 80% alt="">
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
+                            
+                            
                             <div class="col-xl-10 col-lg-10">
                                 <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                     <!-- Main-menu -->
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
-                                            <ul id="navigation">                                                                                          
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="#">Credit Score</a>
-                                                    <ul class="submenu">
+                                            <ul id="navigation">                                                                                        
+                                                <li><a href="home.html">Home</a></li>
+                                                <li><a href="#">My Credit Score</a>
+                                                    <!-- <ul class="submenu">
                                                         <li><a href="recipeSearch.html">Recipe</a></li>
                                                         <li><a href="supermarketSearch.html">Supermarket</a></li>
+                                                    </ul> -->
+                                                </li>
+                                                <li class="optionalMealPrep" id=""><a href="">My Bills</a></li>
+                                                <li><a href="#">Shop Now</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="https://buyandbuildwithalan.company.site/?lang=en&from_admin&vertical=home">Buy and Build with Alan</a></li>
+                                                        <li><a href="">Zara</a></li>
+                                                        <li><a href="">Charles & Keith</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="nutriAnalysis.html">Shop</a></li>
-                                                <li class="optionalMealPrep" id=""><a href="mealPrep.html">Bills</a></li>
-                    
-                                                <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
-                                                </li>
+                                                <!-- <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
+                                                </li> -->
                                                 <li class="optionalLogout" id="" onclick="logout()"><a href="#">Log
                                                         Out</a></li>
                                             </ul>
@@ -120,6 +141,7 @@
         <!-- Header End -->
     </header>
     <main>
+        <br>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3"></div>
@@ -214,7 +236,33 @@
                 <div class="col-3"></div>
             </div>
         </div>
+        <br>
     </main>
+    <footer>
+        <div class="footer-wrappper">
+           <!-- Footer Start-->
+           <div class="footer-area footer-padding">
+               <div class="container">
+                       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>Find out more here</h4>
+                                   <div class="footer-social">
+                                       <a href="https://twitter.com/hashtag/mealplanning?lang=en"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.facebook.com/groups/1072274259565166"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.pinterest.com/mealplanmom/_created/"><i class="fab fa-pinterest-p"></i></a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- footer-bottom area -->
+       
+             <!-- Footer End-->
+         </div>
+       </footer>
     
     <!-- JS here -->
     <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
