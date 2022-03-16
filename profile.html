@@ -116,8 +116,8 @@
                                                         <li><a href="">Charles & Keith</a></li>
                                                     </ul>
                                                 </li>
-                                                <!-- <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
-                                                </li> -->
+                                                <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
+                                                </li>
                                                 <li class="optionalLogout" id="" onclick="logout()"><a href="#">Log
                                                         Out</a></li>
                                             </ul>
@@ -222,8 +222,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Username">Interest Rate</label>
-                            <input type="text" class="form-control" name="interestRate" id="interestRate" value="" disabled>
+                            <label for="interestRate">Interest Rate</label>
+                            <input type="text" class="form-control" name="interestRate" id="interestRate" value="">
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount</label>
+                            <input type="text" class="form-control" name="loanAmount" id="loanAmount" value="">
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numberOfMonths">Number of Repayment Months</label>
+                            <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="">
                             <!--There are only two ways to access this page, after logged in/after sign up-->
                             <!--Regardless of whether acc is logged in, disable this field with the user's username -->
                         </div>

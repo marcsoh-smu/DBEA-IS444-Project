@@ -12,6 +12,8 @@ function retrieve() {
   retrieveMonthlydebt();
   retrieveMonthlycreditlimit();
   retrieveMortacc();
+  retrieveLoanamount();
+  retrieveNumberofmonths();
 }
 
 function retrieveUsername() {
@@ -251,6 +253,46 @@ function retrieveMortacc() {
   request.send();
 }
 
+function retrieveLoanamount() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var loanAmount = document.getElementById("loanAmount");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=loanAmount&" + details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      loanAmount.value = result;
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+}
+
+function retrieveNumberofmonths() {
+  var request = new XMLHttpRequest();
+
+  var username = document.getElementById("Username");
+  var numberOfMonths = document.getElementById("numberOfMonths");
+  var details = "username=" + username;
+  var url =
+    "backendProcess/retrieveProfileInfo.php?retrieve=numberOfMonths&" + details;
+
+  request.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var result = this.responseText; //string
+      numberOfMonths.value = result;
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
+}
+
 function setUpProfile() {
   var request = new XMLHttpRequest();
 
@@ -266,6 +308,8 @@ function setUpProfile() {
   var monthlyDebt = document.getElementById("monthlyDebt").value;
   var monthlyCreditLimit = document.getElementById("monthlyCreditLimit").value;
   var mortAcc = document.getElementById("mortAcc").value;
+  var loanAmount = document.getElementById("loanAmount").value;
+  var numberOfMonths = document.getElementById("numberOfMonths").value;
 
   var details =
     "username=" +
@@ -291,7 +335,11 @@ function setUpProfile() {
     "&monthlyCreditLimit=" +
     monthlyCreditLimit +
     "&mortAcc=" +
-    mortAcc;
+    mortAcc +
+    "&loanAmount=" +
+    loanAmount +
+    "&numberOfMonths=" +
+    numberOfMonths;
   var url = "backendProcess/setUpProfile.php?" + details;
 
   request.onreadystatechange = function () {

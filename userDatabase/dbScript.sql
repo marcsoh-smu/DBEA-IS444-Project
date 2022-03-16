@@ -37,6 +37,8 @@ CREATE TABLE IF NOT EXISTS `userProfile` (
     `monthlydebt` varchar(100),
     `monthlycreditlimit` varchar(100),
     `mortacc` varchar(100),
+    `loanamount` varchar(100),
+    `numberofmonths` varchar(100),
     PRIMARY KEY (`username`)
 ) ;
 -- --------------------------------------------------------

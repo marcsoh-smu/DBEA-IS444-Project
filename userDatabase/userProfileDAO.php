@@ -17,7 +17,9 @@ class userProfileDAO {
                     homeownership,
                     monthlydebt,
                     monthlycreditlimit,
-                    mortacc
+                    mortacc,
+                    loanamount,
+                    numberofmonths
                 FROM userProfile
                 WHERE username = :username"; 
         $stmt = $conn->prepare($sql);
@@ -39,7 +41,9 @@ class userProfileDAO {
                      $row['homeownership'],
                      $row['monthlydebt'],
                      $row['monthlycreditlimit'],
-                     $row['mortacc']];
+                     $row['mortacc'],
+                     $row['loanamount'],
+                     $row['numberofmonths']];
         }
 
         $stmt = null;
@@ -78,8 +82,8 @@ class userProfileDAO {
     public function add($profile) {
         $connMgr = new ConnectionManager();
         $pdo = $connMgr->getConnection();
-        $sql = 'insert into userProfile (username, email, creditscore, interestrate, tbankacc, tbankid, tbankpin, annualincome, homeownership, monthlydebt, monthlycreditlimit, mortacc)
-                 values (:username, :email, :creditscore, :interestrate, :tbankacc, :tbankid, :tbankpin, :annualincome, :homeownership, :monthlydebt, :monthlycreditlimit, :mortacc)';
+        $sql = 'insert into userProfile (username, email, creditscore, interestrate, tbankacc, tbankid, tbankpin, annualincome, homeownership, monthlydebt, monthlycreditlimit, mortacc, loanamount, numberofmonths)
+                 values (:username, :email, :creditscore, :interestrate, :tbankacc, :tbankid, :tbankpin, :annualincome, :homeownership, :monthlydebt, :monthlycreditlimit, :mortacc, :loanamount, :numberofmonths)';
         $isAddOK = FALSE;
         try { 
             $stmt = $pdo->prepare($sql); 
@@ -96,6 +100,8 @@ class userProfileDAO {
             $monthlydebt = $profile->getMonthlydebt();
             $monthlycreditlimit = $profile->getMonthlycreditlimit();
             $mortacc = $profile->getMortacc();
+            $loanamount = $profile->getLoanamount();
+            $numberofmonths = $profile->getNumberofmonths();
             
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -109,6 +115,8 @@ class userProfileDAO {
             $stmt->bindParam(':monthlydebt', $monthlydebt, PDO::PARAM_STR);
             $stmt->bindParam(':monthlycreditlimit', $monthlycreditlimit, PDO::PARAM_STR);
             $stmt->bindParam(':mortacc', $mortacc, PDO::PARAM_STR);
+            $stmt->bindParam(':loanamount', $loanamount, PDO::PARAM_STR);
+            $stmt->bindParam(':numberofmonths', $numberofmonths, PDO::PARAM_STR);
         
             if ($stmt->execute()) {
                 $isAddOK = TRUE;
@@ -141,6 +149,8 @@ class userProfileDAO {
         $monthlydebt = $profile->getMonthlydebt();
         $monthlycreditlimit = $profile->getMonthlycreditlimit();
         $mortacc = $profile->getMortacc();
+        $loanamount = $profile->getLoanamount();
+        $numberofmonths = $profile->getNumberofmonths();
 
         $sql = "UPDATE
                     userProfile
@@ -155,7 +165,9 @@ class userProfileDAO {
                     homeownership = :homeownership,
                     monthlydebt = :monthlydebt,
                     monthlycreditlimit = :monthlycreditlimit,
-                    mortacc = :mortacc
+                    mortacc = :mortacc,
+                    loanamount = :loanamount,
+                    numberofmonths = :numberofmonths
                 WHERE 
                     username = :username";
 
@@ -172,6 +184,8 @@ class userProfileDAO {
         $stmt->bindParam(':monthlydebt', $monthlydebt, PDO::PARAM_STR);
         $stmt->bindParam(':monthlycreditlimit', $monthlycreditlimit, PDO::PARAM_STR);
         $stmt->bindParam(':mortacc', $mortacc, PDO::PARAM_STR);
+        $stmt->bindParam(':loanamount', $loanamount, PDO::PARAM_STR);
+        $stmt->bindParam(':numberofmonths', $numberofmonths, PDO::PARAM_STR);
 
         $status = $stmt->execute();
         

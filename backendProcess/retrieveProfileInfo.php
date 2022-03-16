@@ -27,5 +27,10 @@
         echo $result[9];
     } elseif($request=='mortAcc'){
         echo $result[10];
+    } elseif($request=='loanAmount'){
+        echo $result[11];
+    } elseif($request=='numberOfMonths'){
+        echo $result[12];
     }
+    
 ?>

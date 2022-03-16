@@ -13,9 +13,11 @@
     $monthlyDebt = $_GET['monthlyDebt'];
     $monthlyCreditLimit = $_GET['monthlyCreditLimit'];
     $mortAcc = $_GET['mortAcc'];
+    $loanAmount = $_GET['loanAmount'];
+    $numberOfMonths = $_GET['numberOfMonths'];
     
     $userProfileDAO = new userProfileDAO;
-    $user = new userProfile($username, $email, $creditScore, $interestRate, $tBankAcc, $tBankID, $tBankPIN, $annualIncome, $homeOwnership, $monthlyDebt, $monthlyCreditLimit, $mortAcc);
+    $user = new userProfile($username, $email, $creditScore, $interestRate, $tBankAcc, $tBankID, $tBankPIN, $annualIncome, $homeOwnership, $monthlyDebt, $monthlyCreditLimit, $mortAcc, $loanAmount, $numberOfMonths);
     $result = $userProfileDAO->edit($user);
     echo 'true';
 
