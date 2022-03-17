@@ -216,8 +216,14 @@
                         <div class="form-group">
                             <label for="creditScore">Credit Score</label>
                             <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
+                            <button class="btn btn-primary" type="button" onclick="sendFormData()">Submit</button>
                             <!--There are only two ways to access this page, after logged in/after sign up-->
                             <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div>
+                            <input type="button" onclick="calculate_score()" value="compute" />
+                            <p id="credit_score"></p>
                         </div>
 
                         <div class="setUpButton">

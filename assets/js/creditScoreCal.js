@@ -156,15 +156,15 @@ function calc_term_point() {
 }
 var term_point = calc_term_point(loanTerm);
 
-function creditScoreCal() {
-  var total =
-    annual_inc_point +
-    dti_point +
-    util_point +
-    int_rate_point +
-    mort_acc_point +
-    home_point +
-    term_point +
-    loan_amount_point;
-  return total;
+function calculate_score() {
+  var total = annual_inc_point +
+  dti_point +
+  util_point +
+  int_rate_point +
+  mort_acc_point +
+  home_point +
+  term_point +
+  loan_amount_point;
+
+  document.getElementById("credit_score").innerHTML = total
 }
