@@ -347,10 +347,13 @@ function setUpProfile() {
       var result = this.responseText; //string
 
       if (result == "true") {
-        location.href = "profile.html"; //tentative
-        alert("Profile saved!");
+        document.getElementById("profileMsg").innerHTML = "Profile Saved!";
+        $("#profileModal").modal("show");
+        //location.href = "profile.html"; //tentative
       } else {
-        alert("Profile failed to save. Please try again later.");
+        document.getElementById("profileMsg").innerHTML =
+          "Profile failed to save. Please try again later.";
+        $("#profileModal").modal("show");
       }
     }
   };
