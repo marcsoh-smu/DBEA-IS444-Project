@@ -370,6 +370,7 @@
                 console.log('wow')
                 var details = "username=" + username + "&pwd=" + pwd
                 var url = "backendProcess/addAcc.php?" + details
+                console.log(details)
 
                 request.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
