@@ -8,8 +8,7 @@ class ConnectionManager {
       //LocalHost
       $servername = 'localhost';
       $username = 'root';
-      //$password = ''; 
-      $password = 'root';
+      $password = ''; 
       $dbname = 'dbea_project'; 
 
 
