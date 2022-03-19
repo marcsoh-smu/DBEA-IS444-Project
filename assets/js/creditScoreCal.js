@@ -1,17 +1,16 @@
 // var annualIncome = document.getElementById("annualIncome").value;
 
-
 //Annual Income points
 function calc_annual_income_point() {
   var annualIncome = parseFloat(document.getElementById("annualIncome").value);
 
   if (0 <= annualIncome && annualIncome < 50000) {
     return 47;
-  } else if (50000 <= annualIncome && annualIncome  < 75000) {
+  } else if (50000 <= annualIncome && annualIncome < 75000) {
     return 58;
-  } else if (75000 <= annualIncome && annualIncome  < 105000) {
+  } else if (75000 <= annualIncome && annualIncome < 105000) {
     return 70;
-  } else if (annualIncome && annualIncome  >= 105000) {
+  } else if (annualIncome && annualIncome >= 105000) {
     return 80;
   } else {
     return "Error annual income";
@@ -87,14 +86,13 @@ function calc_loan_amount_point() {
 //   }
 // }
 
-
 //Loan Term points
 function calc_term_point() {
   var numberOfMonths = document.getElementById("numberOfMonths").value;
 
-  if (numberOfMonths == "12 months") {
+  if (numberOfMonths == 12) {
     return 68;
-  } else if (numberOfMonths == "24 months") {
+  } else if (numberOfMonths == 24) {
     return 59;
   } else {
     return "Error no. of months";
@@ -121,7 +119,7 @@ function get_dti() {
 function calc_dti_point() {
   var annualIncome = parseFloat(document.getElementById("annualIncome").value);
   var monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
-  
+
   var dti = get_dti(annualIncome, monthlyDebt);
   var current_dti_2dec = dti.toFixed(2);
 
@@ -143,7 +141,9 @@ function calc_dti_point() {
 //CALCULATE UTILIZATION RATE
 function get_util_rate() {
   var monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
-  var monthlyCreditLimit = parseFloat(document.getElementById("monthlyCreditLimit").value);
+  var monthlyCreditLimit = parseFloat(
+    document.getElementById("monthlyCreditLimit").value
+  );
 
   util_rate = 0;
   if (monthlyCreditLimit == 0 && monthlyDebt != 0) {
@@ -157,7 +157,9 @@ function get_util_rate() {
 // Utilization points
 function calc_util_point() {
   var monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
-  var monthlyCreditLimit = parseFloat(document.getElementById("monthlyCreditLimit").value);
+  var monthlyCreditLimit = parseFloat(
+    document.getElementById("monthlyCreditLimit").value
+  );
 
   var util = get_util_rate(monthlyCreditLimit, monthlyDebt);
   var util_rate = util.toFixed(2);
@@ -180,45 +182,29 @@ function calc_util_point() {
 function apply_loan_btn() {
   var creditScore = document.getElementById("creditScore").value;
 
-  if(creditScore >= 600) {
+  if (creditScore >= 600) {
     var myDiv = document.getElementById("apply_btn");
-      
+
     // creating button element
-    var button = document.createElement('BUTTON');
-      
-    // creating text to be
-    //displayed on button
-    var text = document.createTextNode("Apply for Loan !");
-      
-    // appending text to button
-    button.appendChild(text);
-      
-    // appending button to div
-    myDiv.appendChild(button);
-
-
-    //MARCUS you can put the apply for loan function inside here
-    myDiv.onclick = function(event) {
-      console.log("apply function btn works!");
-    }
-  } 
-  else {
+    var str = `<a href="./confirmLoanApplication.html" class="btn btn-primary">Apply for Bank Loan</></a>`;
+    myDiv.innerHTML = str;
+  } else {
     var myDiv = document.getElementById("apply_btn");
-      
+
     var para = document.createElement("p");
-    var textNode = document.createTextNode("Sorry, you are not eligible for loan.");
+    var textNode = document.createTextNode(
+      "Sorry, you are not eligible for loan."
+    );
     para.appendChild(textNode);
-    myDiv.append(para)
+    myDiv.append(para);
   }
 }
 
-
 //Calculate total points
 function calculate_score() {
-
   var annual_inc_point = calc_annual_income_point(annualIncome);
   // console.log("annual_inc_point")
-  console.log(annual_inc_point)
+  console.log(annual_inc_point);
   var mort_acc_point = calc_mort_acc_point(mortAcc);
   // console.log("mort_acc_point")
   // console.log(mort_acc_point)
@@ -232,7 +218,7 @@ function calculate_score() {
   //interest default 6% 138points
   // var int_rate_point = calc_int_rate_point(interestRate);
   // console.log("int_rate_point")
-  var int_rate_point = 138
+  var int_rate_point = 138;
 
   var term_point = calc_term_point(numberOfMonths);
   // console.log("term_point")
@@ -245,19 +231,20 @@ function calculate_score() {
   // console.log("util_point")
   // console.log(util_point)
 
-  var total = annual_inc_point +
-  dti_point +
-  util_point +
-  int_rate_point +
-  mort_acc_point +
-  home_point +
-  term_point +
-  loan_amount_point;
+  var total =
+    annual_inc_point +
+    dti_point +
+    util_point +
+    int_rate_point +
+    mort_acc_point +
+    home_point +
+    term_point +
+    loan_amount_point;
 
-  document.getElementById("creditScore").value = total
+  document.getElementById("creditScore").value = total;
   // if(total <= 600) {
   //   document.getElementById("apply_loan_btn").style.display = "none";
-  // } 
+  // }
   // else {
   //   document.getElementById("apply_loan_btn").style.display = "";
   // }
@@ -267,5 +254,5 @@ function calculate_score() {
 }
 
 // function display_apply_loan_btn() {
-  
+
 // }
