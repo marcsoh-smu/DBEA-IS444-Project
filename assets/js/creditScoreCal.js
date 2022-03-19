@@ -1,4 +1,4 @@
-var annualIncome = document.getElementById("annualIncome").value;
+// var annualIncome = document.getElementById("annualIncome").value;
 
 var monthlyDebt = document.getElementById("monthlyDebt").value;
 var monthlyCreditLimit = document.getElementById("monthlyCreditLimit").value;
@@ -10,14 +10,21 @@ var monthlyDebt = document.getElementById("monthlyDebt").value;
 
 //CALCULATE DTI
 function get_dti() {
+  var annualIncome = document.getElementById("annualIncome").value;
+
   var monthly_inc = annualIncome / 12;
   var current_dti = 0;
   if (monthly_inc == 0 && monthlyDebt != 0) {
     current_dti = 0;
   } else if (monthlyDebt != 0) {
     current_dti = monthlyDebt / monthly_inc;
+    console.log("currentdti1")
+    console.log(current_dti)
   }
+  console.log("currentdti2")
+  console.log(current_dti)
   return current_dti * 100;
+  
   
 }
 var dti = get_dti(annualIncome, monthlyDebt);
@@ -38,6 +45,8 @@ var util_rate = util.toFixed(2);
 
 //SCORECARD POINTS Breakdown
 function calc_annual_income_point() {
+  var annualIncome = document.getElementById("annualIncome").value;
+
   if (0 <= annualIncome < 50000) {
     return 47;
   } else if (50000 <= annualIncome < 75000) {
