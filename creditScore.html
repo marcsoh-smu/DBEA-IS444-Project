@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> Profile</title>
+    <title>NarBank - Profile</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/narwhal_logo_icon.ico">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
     <style>
         .contain{
             background-color:white;
-            border:2px solid darkgreen;
+            border:2px solid #23819d;
         }
         .mainForm{
             background-color:white;
@@ -37,19 +37,24 @@
             text-decoration:underline;
         }
         .profileSetUp{
-            color:rgb(2, 75, 2);
+            color:#23819d;
             font-size:30px;
             margin-top:20px;
             margin-bottom:20px;
         }
         body{
-            background-image: url(assets/img/gallery/header-meal-prep-three-day.jpg);
+            background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url(assets/img/gallery/profile.jpg);
         }
         .head{
             background-color:white;
         }
         .setUpButton{
             margin-bottom:20px;
+        }
+        .main-header{
+            background: white;
         }
     </style>
 </head>
@@ -76,25 +81,41 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html"><img src="assets/img/logo/narwhal.png" width = 90% height = 90% alt=""></a>
+                                    <a href="home.html">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h2>NarBank</h2>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <img src="assets/img/logo/narwhal_logo.png" width = 80% height = 80% alt="">
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
+                            
+                            
                             <div class="col-xl-10 col-lg-10">
                                 <div class="menu-wrapper  d-flex align-items-center justify-content-end">
                                     <!-- Main-menu -->
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
-                                            <ul id="navigation">                                                                                          
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="#">Credit Score</a>
-                                                    <ul class="submenu">
+                                            <ul id="navigation">                                                                                        
+                                                <li><a href="home.html">Home</a></li>
+                                                <li><a href="#">My Credit Score</a>
+                                                    <!-- <ul class="submenu">
                                                         <li><a href="recipeSearch.html">Recipe</a></li>
                                                         <li><a href="supermarketSearch.html">Supermarket</a></li>
+                                                    </ul> -->
+                                                </li>
+                                                <li class="optionalMealPrep" id=""><a href="">My Bills</a></li>
+                                                <li><a href="#">Shop Now</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="https://buyandbuildwithalan.company.site/?lang=en&from_admin&vertical=home">Buy and Build with Alan</a></li>
+                                                        <li><a href="">Zara</a></li>
+                                                        <li><a href="">Charles & Keith</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="nutriAnalysis.html">Shop</a></li>
-                                                <li class="optionalMealPrep" id=""><a href="mealPrep.html">Bills</a></li>
-                    
                                                 <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
                                                 </li>
                                                 <li class="optionalLogout" id="" onclick="logout()"><a href="#">Log
@@ -120,6 +141,7 @@
         <!-- Header End -->
     </header>
     <main>
+        <br>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3"></div>
@@ -157,90 +179,110 @@
                             <!--allow user to change this, put the original value in the field-->
                         </div>
 
-                        <div class="form-group">
-                            <label for="annualincome">Annual Income</label>
-                            <input type="text" class="form-control" name="annualincome" id="annualIncome" value="">
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="homeownership">Home Ownership</label>
-                            <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="monthlydebt">Monthly Debt</label>
-                            <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="monthlycreditlimit">Monthly Credit Limit</label>
-                            <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mortacc">Mortgage Account</label>
-                            <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="loanAmt">Loan Amount</label>
-                            <input type="text" class="form-control" name="mortacc" id="loanAmt" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="loanterm">Loan Term</label>
-                            <input type="text" class="form-control" name="mortacc" id="loanterm" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="interestRate">Interest Rate</label>
-                            <input type="text" class="form-control" name="interestRate" id="interestRate" value="" disabled>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div class="form-group">
-                            <label for="creditScore">Credit Score</label>
-                            <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
-                            <button class="btn btn-primary" type="button" onclick="sendFormData()">Submit</button>
-                            <!--There are only two ways to access this page, after logged in/after sign up-->
-                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
-                        </div>
-
-                        <div>
-                            <input type="button" onclick="calculate_score()" value="compute" />
-                            <p id="credit_score"></p>
-                        </div>
-
                         <div class="setUpButton">
-                            <a type="button" class="btn btn-primary" onclick="setUpProfile()">Save</a>
+                            <a type="button" class="btn btn-primary" onclick="setUpProfile()" data-toggle="modal" data-target="#exampleModalCenter">Save</a>
                         </div>
+
+                        <h3>Other Information:</h3>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                Annual Income: <input type="text" class="form-control" name="annualincome" id="annualIncome" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Monthly Debt: <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" disabled>
+                              </div>
+                            </div>
+                          </div> <br> 
+
+                          <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                Monthly Credit Limit:  <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Mortgage Account(s): <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" disabled>
+                              </div>
+                              <div class="col">
+                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
+                              </div>
+                            </div>
+                          </div><br>
+
+                          <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                Interest Rate:  <input type="text" class="form-control" name="interestRate" id="interestRate" value="" disabled>
+                              </div>
+                              <div class="col order-5">
+                                Loan Amount: <input type="text" class="form-control" name="loanAmount" id="loanAmt" value="" disabled>
+                              </div>
+                              <div class="col order-1">
+                                Number of Repayment Months: <input type="text" class="form-control" name="numberOfMonths" id="loanterm" value="" disabled>
+                              </div>
+                            </div>
+                          </div> <br>
                     </form>
                 </div>
                 <div class="col-3"></div>
             </div>
         </div>
+        <br>
+
+         <!-- Modal -->
+        <div class="modal fade profileModal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body" id="profileMsg">
+                <p></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
     </main>
+    <footer>
+        <div class="footer-wrappper">
+           <!-- Footer Start-->
+           <div class="footer-area footer-padding">
+               <div class="container">
+                       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>Find out more here</h4>
+                                   <div class="footer-social">
+                                       <a href="https://twitter.com/hashtag/mealplanning?lang=en"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.facebook.com/groups/1072274259565166"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.pinterest.com/mealplanmom/_created/"><i class="fab fa-pinterest-p"></i></a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- footer-bottom area -->
+       
+             <!-- Footer End-->
+         </div>
+       </footer>
     
     <!-- JS here -->
     <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
     <script type="text/javascript" src="./assets/js/logout.js"></script>
     <script type="text/javascript" src="./assets/js/profile.js"></script>
-    <script type="text/javascript" src="./assets/js/creditScoreCal.js"></script>
     
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
