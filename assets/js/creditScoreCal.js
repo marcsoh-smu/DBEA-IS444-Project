@@ -70,23 +70,24 @@ function calc_loan_amount_point() {
 }
 
 //Interest rate points
-function calc_int_rate_point() {
-  var interestRate = parseFloat(document.getElementById("interestRate").value);
+//Interest default 6%
+// function calc_int_rate_point() {
+//   var interestRate = parseFloat(document.getElementById("interestRate").value);
 
-  if (0 <= interestRate && interestRate < 8.0) {
-    return 138;
-  } else if (8.0 <= interestRate && interestRate < 12.5) {
-    return 91;
-  } else if (12.5 <= interestRate && interestRate < 16.5) {
-    return 57;
-  } else if (16.5 <= interestRate && interestRate < 21.5) {
-    return 28;
-  } else if (interestRate && interestRate >= 21.5) {
-    return 5;
-  } else {
-    return "Error int rate";
-  }
-}
+//   if (0 <= interestRate && interestRate < 8.0) {
+//     return 138;
+//   } else if (8.0 <= interestRate && interestRate < 12.5) {
+//     return 91;
+//   } else if (12.5 <= interestRate && interestRate < 16.5) {
+//     return 57;
+//   } else if (16.5 <= interestRate && interestRate < 21.5) {
+//     return 28;
+//   } else if (interestRate && interestRate >= 21.5) {
+//     return 5;
+//   } else {
+//     return "Error int rate";
+//   }
+// }
 
 
 //Loan Term points
@@ -195,9 +196,12 @@ function calculate_score() {
   var loan_amount_point = calc_loan_amount_point(loanAmount);
   console.log("loan_amount_point")
   console.log(loan_amount_point)
-  var int_rate_point = calc_int_rate_point(interestRate);
-  console.log("int_rate_point")
-  console.log(int_rate_point)
+
+  //interest default 6% 138points
+  // var int_rate_point = calc_int_rate_point(interestRate);
+  // console.log("int_rate_point")
+  var int_rate_point = 138
+
   var term_point = calc_term_point(numberOfMonths);
   console.log("term_point")
   console.log(term_point)
