@@ -190,7 +190,15 @@
                                 Annual Income: <input type="text" class="form-control" name="annualincome" id="annualIncome" value="" >
                               </div>
                               <div class="col">
-                                Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" >
+                                <!-- Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" > -->
+                                Home Ownership:
+                                <select name="homeownership" id="homeOwnership">
+                                    <option value="" selected>Select from below</option>
+                                    <option value="MORTGAGE">MORTGAGE</option>
+                                    <option value="RENT">RENT</option>
+                                    <option value="OWN">OWN</option>
+                                </select>
+
                               </div>
                               <div class="col">
                                 Monthly Debt: <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" >
@@ -229,13 +237,16 @@
                               </div> -->
 
                               <div class="col order-5">
-                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" >
+                                <!-- Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" > -->
+                                Credit Score: 
+                                <p id="creditScore"></p>
                               </div>
 
                               <div class="col order-1">
                                 <!-- Number of Repayment Months: <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="" > -->
                                 Number of Repayment Months:
                                 <select name="numberOfMonths" id="numberOfMonths">
+                                    <option value="" selected>Select from below</option>
                                     <option value="12 months">12 months</option>
                                     <option value="24 months">24 months</option>
                                 </select>
@@ -246,7 +257,6 @@
 
                           <div>
                             <input type="button" onclick="calculate_score()" value="Calculate" />
-                            <p id="creditScore"></p>
                             </div>
 
                     </form>

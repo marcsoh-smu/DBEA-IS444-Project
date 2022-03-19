@@ -1,10 +1,10 @@
 var annualIncome = document.getElementById("annualIncome").value;
-var homeOwnership = document.getElementById("homeOwnership").value;
+
 var monthlyDebt = document.getElementById("monthlyDebt").value;
 var monthlyCreditLimit = document.getElementById("monthlyCreditLimit").value;
 var mortAcc = document.getElementById("mortAcc").value;
 var loanAmount = document.getElementById("loanAmount").value;
-var numberOfMonths = document.getElementById("numberOfMonths").value;
+
 var interestRate = document.getElementById("interestRate").value;
 var monthlyDebt = document.getElementById("monthlyDebt").value;
 
@@ -18,6 +18,7 @@ function get_dti() {
     current_dti = monthlyDebt / monthly_inc;
   }
   return current_dti * 100;
+  
 }
 var dti = get_dti(annualIncome, monthlyDebt);
 var current_dti = dti.toFixed(2);
@@ -46,8 +47,9 @@ function calc_annual_income_point() {
   } else if (annualIncome >= 105000) {
     return 80;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error annual income";
   }
+  
 }
 var annual_inc_point = calc_annual_income_point(annualIncome);
 
@@ -63,7 +65,7 @@ function calc_dti_point() {
   } else if (dti >= 30.0) {
     return 32;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error cal DTI";
   }
 }
 var dti_point = calc_dti_point(dti);
@@ -80,7 +82,7 @@ function calc_util_point() {
   } else if (util >= 90.0) {
     return 55;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error calc util";
   }
 }
 var util_point = calc_util_point(util);
@@ -95,7 +97,7 @@ function calc_loan_amount_point() {
   } else if (loanAmount >= 16000) {
     return 53;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error loan amt";
   }
 }
 var loan_amount_point = calc_loan_amount_point(loanAmount);
@@ -112,7 +114,7 @@ function calc_int_rate_point() {
   } else if (interestRate >= 21.5) {
     return 5;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error int rate";
   }
 }
 var int_rate_point = calc_int_rate_point(interestRate);
@@ -127,12 +129,13 @@ function calc_mort_acc_point() {
   } else if (mortAcc >= 5.0) {
     return 72;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error mort acc point";
   }
 }
 var mort_acc_point = calc_mort_acc_point(mortAcc);
 
 function calc_home_point() {
+  var homeOwnership = document.getElementById("homeOwnership").value;
   if (homeOwnership == "MORTGAGE") {
     return 68;
   } else if (homeOwnership == "OWN") {
@@ -140,23 +143,30 @@ function calc_home_point() {
   } else if (homeOwnership == "RENT") {
     return 52;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error homeownership";
   }
 }
-var home_point = calc_home_point(homeOwnership);
+
 
 function calc_term_point() {
+  var numberOfMonths = document.getElementById("numberOfMonths").value;
   if (numberOfMonths == "12 months") {
+    console.log("term point 68")
     return 68;
   } else if (numberOfMonths == "24 months") {
+    console.log("term point 59")
     return 59;
   } else {
-    return "Seems like you keyed an negative value";
+    return "Error no. of months";
   }
 }
-var term_point = calc_term_point(numberOfMonths);
+
 
 function calculate_score() {
+
+  var home_point = calc_home_point(homeOwnership);
+  var term_point = calc_term_point(numberOfMonths);
+
   var total = annual_inc_point +
   dti_point +
   util_point +
@@ -167,4 +177,6 @@ function calculate_score() {
   loan_amount_point;
 
   document.getElementById("creditScore").innerHTML = total
+  console.log("creditscore")
+  console.log(total)
 }
