@@ -202,8 +202,6 @@ function calculate_score() {
   console.log("term_point")
   console.log(term_point)
 
-
-
   var dti_point = calc_dti_point();
   console.log("dti_point")
   console.log(dti_point)
@@ -220,8 +218,18 @@ function calculate_score() {
   term_point +
   loan_amount_point;
 
-  document.getElementById("creditScore").innerHTML = total
+  document.getElementById("creditScore").value = total
+
+  if(total < 600) {
+    document.getElementById("apply_loan_btn").style.display = "none";
+  } else {
+    document.getElementById("apply_loan_btn").style.display = "";
+  }
+
   console.log("creditScore")
   console.log(total)
 }
 
+// function display_apply_loan_btn() {
+  
+// }
