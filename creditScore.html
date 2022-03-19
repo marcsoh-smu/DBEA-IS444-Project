@@ -56,6 +56,7 @@
         .main-header{
             background: white;
         }
+
     </style>
 </head>
 <body onload="retrieve()">
@@ -257,11 +258,11 @@
                           </div> <br>
 
                             <div>
-                                <input type="button" onclick="calculate_score()" value="Calculate" />
+                                <input type="button" onclick="calculate_score(); apply_loan_btn();" value="Calculate" />
                             </div>
 
-                            <div >
-                                <button id="apply_loan_btn">Apply for Loan</button>
+                            <div id="apply_btn">
+                                
                             </div>
 
                     </form>
