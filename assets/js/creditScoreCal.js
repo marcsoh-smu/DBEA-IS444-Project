@@ -3,8 +3,8 @@ var homeOwnership = document.getElementById("homeOwnership").value;
 var monthlyDebt = document.getElementById("monthlyDebt").value;
 var monthlyCreditLimit = document.getElementById("monthlyCreditLimit").value;
 var mortAcc = document.getElementById("mortAcc").value;
-var loanAmt = document.getElementById("loanAmt").value;
-var loanTerm = document.getElementById("loanTerm").value;
+var loanAmount = document.getElementById("loanAmount").value;
+var numberOfMonths = document.getElementById("numberOfMonths").value;
 var interestRate = document.getElementById("interestRate").value;
 var monthlyDebt = document.getElementById("monthlyDebt").value;
 
@@ -86,19 +86,19 @@ function calc_util_point() {
 var util_point = calc_util_point(util);
 
 function calc_loan_amount_point() {
-  if (0 <= loanAmt < 4000) {
+  if (0 <= loanAmount < 4000) {
     return 77;
-  } else if (4000 <= loanAmt < 10000) {
+  } else if (4000 <= loanAmount < 10000) {
     return 70;
-  } else if (10000 <= loanAmt < 16000) {
+  } else if (10000 <= loanAmount < 16000) {
     return 60;
-  } else if (loanAmt >= 16000) {
+  } else if (loanAmount >= 16000) {
     return 53;
   } else {
     return "Seems like you keyed an negative value";
   }
 }
-var loan_amount_point = calc_loan_amount_point(loanAmt);
+var loan_amount_point = calc_loan_amount_point(loanAmount);
 
 function calc_int_rate_point() {
   if (0 <= interestRate < 8.0) {
@@ -115,7 +115,7 @@ function calc_int_rate_point() {
     return "Seems like you keyed an negative value";
   }
 }
-var int_rate_point = calc_int_rate_point(int_rate);
+var int_rate_point = calc_int_rate_point(interestRate);
 
 function calc_mort_acc_point() {
   if (0 <= mortAcc < 1.0) {
@@ -146,15 +146,15 @@ function calc_home_point() {
 var home_point = calc_home_point(homeOwnership);
 
 function calc_term_point() {
-  if (loanTerm == "12 months") {
+  if (numberOfMonths == "12 months") {
     return 68;
-  } else if (loanTerm == "24 months") {
+  } else if (numberOfMonths == "24 months") {
     return 59;
   } else {
     return "Seems like you keyed an negative value";
   }
 }
-var term_point = calc_term_point(loanTerm);
+var term_point = calc_term_point(numberOfMonths);
 
 function calculate_score() {
   var total = annual_inc_point +
