@@ -187,13 +187,13 @@
                         <div class="container">
                             <div class="row">
                               <div class="col">
-                                Annual Income: <input type="text" class="form-control" name="annualincome" id="annualIncome" value="" disabled>
+                                Annual Income: <input type="text" class="form-control" name="annualincome" id="annualIncome" value="" >
                               </div>
                               <div class="col">
-                                Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" disabled>
+                                Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" >
                               </div>
                               <div class="col">
-                                Monthly Debt: <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" disabled>
+                                Monthly Debt: <input type="text" class="form-control" name="monthlydebt" id="monthlyDebt" value="" >
                               </div>
                             </div>
                           </div> <br> 
@@ -201,10 +201,10 @@
                           <div class="container">
                             <div class="row">
                               <div class="col">
-                                Monthly Credit Limit:  <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" disabled>
+                                Monthly Credit Limit:  <input type="text" class="form-control" name="monthlycreditlimit" id="monthlyCreditLimit" value="" >
                               </div>
                               <div class="col">
-                                Mortgage Account(s): <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" disabled>
+                                Mortgage Account(s): <input type="text" class="form-control" name="mortacc" id="mortAcc" value="" >
                               </div>
 
                               <!-- <div class="col">
@@ -212,7 +212,7 @@
                               </div> -->
 
                               <div class="col">
-                                Loan Amount: <input type="text" class="form-control" name="loanAmount" id="loanAmt" value="" disabled>
+                                Loan Amount: <input type="text" class="form-control" name="loanAmount" id="loanAmt" value="" >
                               </div>
 
                             </div>
@@ -221,7 +221,7 @@
                           <div class="container">
                             <div class="row">
                               <div class="col">
-                                Interest Rate:  <input type="text" class="form-control" name="interestRate" id="interestRate" value="" disabled>
+                                Interest Rate:  <input type="text" class="form-control" name="interestRate" id="interestRate" value="" >
                               </div>
 
                               <!-- <div class="col order-5">
@@ -229,14 +229,26 @@
                               </div> -->
 
                               <div class="col order-5">
-                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" disabled>
+                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" >
                               </div>
 
                               <div class="col order-1">
-                                Number of Repayment Months: <input type="text" class="form-control" name="numberOfMonths" id="loanterm" value="" disabled>
+                                <!-- Number of Repayment Months: <input type="text" class="form-control" name="numberOfMonths" id="loanterm" value="" > -->
+                                Number of Repayment Months:
+                                <select name="numberOfMonths" id="loanTerm">
+                                    <option value="12 months">12 months</option>
+                                    <option value="24 months">24 months</option>
+                                </select>
+
                               </div>
                             </div>
                           </div> <br>
+
+                          <div>
+                            <input type="button" onclick="calculate_score()" value="compute" />
+                            <p id="credit_score"></p>
+                            </div>
+
                     </form>
                 </div>
                 <div class="col-3"></div>
@@ -295,6 +307,7 @@
     <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
     <script type="text/javascript" src="./assets/js/logout.js"></script>
     <script type="text/javascript" src="./assets/js/profile.js"></script>
+    <script type="text/javascript" src="./assets/js/creditScoreCal.js"></script>
     
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->

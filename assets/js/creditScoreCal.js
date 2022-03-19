@@ -101,15 +101,15 @@ function calc_loan_amount_point() {
 var loan_amount_point = calc_loan_amount_point(loanAmt);
 
 function calc_int_rate_point() {
-  if (0 <= int_rate < 8.0) {
+  if (0 <= interestRate < 8.0) {
     return 138;
-  } else if (8.0 <= int_rate < 12.5) {
+  } else if (8.0 <= interestRate < 12.5) {
     return 91;
-  } else if (12.5 <= int_rate < 16.5) {
+  } else if (12.5 <= interestRate < 16.5) {
     return 57;
-  } else if (16.5 <= int_rate < 21.5) {
+  } else if (16.5 <= interestRate < 21.5) {
     return 28;
-  } else if (int_rate >= 21.5) {
+  } else if (interestRate >= 21.5) {
     return 5;
   } else {
     return "Seems like you keyed an negative value";
@@ -146,9 +146,9 @@ function calc_home_point() {
 var home_point = calc_home_point(homeOwnership);
 
 function calc_term_point() {
-  if (loanTerm == "36 months") {
+  if (loanTerm == "12 months") {
     return 68;
-  } else if (loanTerm == "60 months") {
+  } else if (loanTerm == "24 months") {
     return 59;
   } else {
     return "Seems like you keyed an negative value";
@@ -166,5 +166,5 @@ function calculate_score() {
   term_point +
   loan_amount_point;
 
-  document.getElementById("credit_score").innerHTML = total
+  document.getElementById("creditScore").innerHTML = total
 }
