@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>NarBank - Profile</title>
+    <title>NarBank - My Credit Score</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/narwhal_logo_icon.ico">
@@ -184,7 +184,7 @@
                             <a type="button" class="btn btn-primary" onclick="setUpProfile()" data-toggle="modal" data-target="#exampleModalCenter">Save</a>
                         </div>
 
-                        <h3>Other Information:</h3>
+                        <h3>My Portfolio:</h3>
                         <div class="container">
                             <div class="row">
                               <div class="col">
@@ -229,7 +229,7 @@
 
                           <div class="container">
                             <div class="row">
-                              <div class="col">
+                              <div class="col-2">
                                 <!-- Interest Rate:   -->
                                 <input type="hidden" class="form-control" name="interestRate" id="interestRate" value="" >
                               </div>
@@ -238,13 +238,13 @@
                                 Loan Amount: <input type="text" class="form-control" name="loanAmount" id="loanAmount" value="" disabled>
                               </div> -->
 
-                              <div class="col order-5">
-                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" >
+                              <div class="col-4 order-5">
+                                Credit Score: <input type="text" class="form-control" name="creditScore" id="creditScore" value="" readonly>
                                 <!-- Credit Score:  -->
                                 <!-- <p id="creditScore"></p> -->
                               </div>
 
-                              <div class="col order-1">
+                              <div class="col-6 order-1">
                                 <!-- Number of Repayment Months: <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="" > -->
                                 Number of Repayment Months:
                                 <select name="numberOfMonths" id="numberOfMonths">
@@ -257,14 +257,16 @@
                             </div>
                           </div> <br>
 
-                            <div>
-                                <input type="button" onclick="calculate_score(); apply_loan_btn();" value="Calculate" />
+                            <div class="row">
+                                <div class="col setUpButton">
+                                    <input type="button" class="btn btn-primary" onclick="calculate_score(); apply_loan_btn();" value="Calculate" />
+                                </div>
+    
+                                <div class="col" id="apply_btn">
+                                    
+                                </div>
                             </div>
-
-                            <div id="apply_btn">
-                                
-                            </div>
-
+                            
                     </form>
                 </div>
                 <div class="col-3"></div>
