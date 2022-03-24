@@ -150,13 +150,13 @@
                     <form>
                         <div class="form-group">
                             <label for="loanAmount">Loan Amount</label>
-                            <input type="text" class="form-control" name="loanAmount" id="loanAmount" value="" disabled>
+                            <input type="text" class="form-control" name="loanAmount" id="loanAmount" value="">
                             <!--allow user to change this, put the original value in the field-->
                         </div>
 
                         <div class="form-group">
                             <label for="numberOfMonths">Number of Months</label>
-                            <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="" disabled>
+                            <input type="text" class="form-control" name="numberOfMonths" id="numberOfMonths" value="">
                             <!--allow user to change this, put the original value in the field-->
                         </div>
 
@@ -170,8 +170,10 @@
                             <label for="tBankPIN"></label>
                             <input type="hidden" class="form-control" name="tBankPIN" id="tBankPIN" value="">
                             <!--tBank PIN: will make this type hidden once testing is done-->
-                       
-                        
+
+                            <label for="email"></label>
+                            <input type="hidden" class="form-control" name="email" id="email" value="">
+                            <!--allow user to change this, put the original value in the field-->
                         
                             <label for="tBankAcc"></label>
                             <input type="hidden" class="form-control" name="tBankAcc" id="tBankAcc" value="">
@@ -179,30 +181,19 @@
                        
 
                         <br>
-                        <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Send my loan application</button>
-                        <br><br>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <h3 style="color:#937851">Output</h3>
+                        <div class="row">
+                            <div class="col-sm-offset-6 col-sm-6">
+                                <button type="reset" class="btn btn-default">Clear</button>
                             </div>
-                            <form class="form-horizontal well" style="padding-bottom: 0px;">
-                                <div class="form-group">
-                                    <div class="col-sm-offset-4 col-sm-4">
-                                        <button type="reset" class="btn btn-default">Clear</button>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="accountID" class="col control-label">Account ID of Loan</label>
-                                    <div class="col">
-                                        <input id="accountID" type="text" class="form-control" disabled/>
-                                    </div>
-                                </div>
-                                <!-- <label for="status" class="col-sm-4 control-label">Status</label>
-                                <input id="status" type="text" class="form-control" disabled /> -->
-                                
-                            </form>
+                            <div class="col-sm-offset-6 col-sm-6">
+                                <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Send my loan application</button>
+                            </div>
                         </div>
+                        <br>
+                        <p id="accountID"></p>
+                        <p id="status"></p>
+                        <br>
+
                     </div>
 
             <!-- Error Modal -->
@@ -257,6 +248,7 @@
     <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
     <script type="text/javascript" src="./assets/js/logout.js"></script>
     <script type="text/javascript" src="./assets/js/applyforloan.js"></script>
+    <script type="text/javascript" src="./assets/js/sendEmail.js"></script>
     
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
@@ -325,6 +317,15 @@
             PIN = x;
         }
         
+        //Email
+        var emailAddress = "";
+        function getEmail() {
+            return emailAddress
+        }
+        function setEmail(x) {
+            emailAddress = x;
+        }
+        
         // show error modal
         function showErrorModal(errorMessage) {
             document.getElementById("errorMsg").innerHTML = errorMessage;
@@ -342,13 +343,87 @@
             setTimeout (callback(), 1000);
         }
         
+        function sendEmail(userID, PIN, email, accountID) {
+            console.log(userID);
+            console.log(PIN);
+            console.log(accountID);
+            console.log(email);
+            console.log("In sendEmail function");
+            var serviceName = "sendEmail";
+            var emailAddress = email;
+            var emailSubject = "Confirmation of Loan Application for Account ID:" + accountID
+            var emailBody = "Dear Jasmine, \n\nWe have received your loan application through NarBank. \nPlease kindly wait for our personnel to get back to you on the approval of the loan. \nThank you. \n\nBest regards,\nManagement team of tBank"
+
+            var headerObj = {
+                Header: {
+                    serviceName: serviceName,
+                    userID: userID,
+                    PIN: PIN,
+                    OTP: "999999",
+                },
+            };
+            var contentObj = {
+                Content: {
+                    emailAddress: emailAddress,
+                    emailSubject: emailSubject,
+                    emailBody: emailBody,
+                },
+            };
+            var header = JSON.stringify(headerObj);
+            var content = JSON.stringify(contentObj);
+
+            // setup http request
+            var xmlHttp = new XMLHttpRequest();
+                if (xmlHttp === null) {
+                alert("Browser does not support HTTP request.");
+                return;
+            }
+            xmlHttp.open(
+                "POST",
+                getApiURL() + "?Header=" + header + "&Content=" + content,
+                true
+            );
+            xmlHttp.timeout = 5000;
+
+            // setup http event handlers
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    responseObj = JSON.parse(xmlHttp.responseText);
+                    serviceRespHeader =
+                    responseObj.Content.ServiceResponse.ServiceRespHeader;
+                    globalErrorID = serviceRespHeader.GlobalErrorID;
+                    if (globalErrorID === "010041") {
+                        showOTPModal();
+                        return;
+                    } else if (globalErrorID !== "010000") {
+                        showErrorModal(serviceRespHeader.ErrorDetails);
+                        return;
+                    }
+
+                    // display data
+                    document.getElementById("status").append("Confirmation email sent.");
+
+                    // enable Send button
+                    document.getElementById("Send").disabled = false;
+                }
+            };
+            xmlHttp.ontimeout = function (e) {
+                showErrorModal("Timeout invoking API.");
+                return;
+            };
+
+            // send the http request
+                xmlHttp.send();
+                console.log("end of email function");
+        }
         
             $(document).ready(function () {
                 
                 // init user credentials
                 document.getElementById("tBankID").value = getUserID();
                 document.getElementById("tBankPIN").value = getPIN();
-        
+                document.getElementById("email").value = getEmail();
+
                 /*----------------------------------------
                  * [Send] button clicked
                  */
@@ -357,10 +432,14 @@
         
                         // set service header values
                         var serviceName = "applyForLoan";
+                        var serviceName1 = "sendEmail";
                         var userID = document.getElementById("tBankID").value;
                         setUserID(userID);
                         var PIN = document.getElementById("tBankPIN").value;
                         setPIN(PIN);
+                        var email = document.getElementById("email").value;
+                        setEmail(email);
+                        console.log(email);
                         
                         // get and validate form values
                         var loanAmount = document.getElementById("loanAmount").value;
@@ -375,18 +454,14 @@
                             return;  
                         }
         
-                        // var title = document.getElementById("title").value;
-                        // if (title === ""){
-                        //     showErrorModal("Title cannot be blank.");
-                        //     return;  
-                        // }
         
                         var settlementAccount = document.getElementById("tBankAcc").value;
                         if (settlementAccount === ""){
                             showErrorModal("Settlement Account cannot be blank.");
                             return;  
                         }
-                        
+                        var emailSubject = "Loan Application Submitted";
+                        var emailBody = "Dear Jasmine, \n\nWe have received your loan application through NarBank. \nPlease kindly wait for our personnel to get back to you on the approval of the loan. \nThank you. \n\nBest regards,\nManagement team of tBank";
                         // disable Send button
                         document.getElementById("Send").disabled = true;
         
@@ -442,8 +517,10 @@
                                 accountID = responseObj.Content.ServiceResponse.accountID._content_;
                                 
                                 // display data
-                                document.getElementById("accountID").value = accountID;
-        
+                                document.getElementById("accountID").append("Loan Account ID: " + accountID + " created.");
+                                sendEmail(userID, PIN, email, accountID);
+                                
+                                // sendEmail(userID, PIN, email, accountID);
                                 // enable Send button
                                 document.getElementById("Send").disabled = false;
                             }
