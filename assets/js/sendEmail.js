@@ -4,6 +4,8 @@ function retrieve() {
     retrieveTbankpin();
     retrieveEmail();
     retrieveTbankacc();
+    retrieveLoanamount();
+    retrieveNumberofmonths();
   }
   
   function retrieveUsername() {
