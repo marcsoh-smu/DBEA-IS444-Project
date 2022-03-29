@@ -1,0 +1,585 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>NarBank - Loan Application</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/narwhal_logo_icon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/hamburgers.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .contain{
+            background-color:white;
+            border:2px solid #23819d;
+        }
+        .mainForm{
+            background-color:white;
+            padding-top: 10px;
+            padding-bottom:30px;
+        }
+        #signup{
+            color:blue;
+            text-decoration:underline;
+        }
+        .profileSetUp{
+            color:#23819d;
+            font-size:30px;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        body{
+            background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url(assets/img/gallery/profile.jpg);
+        }
+        .head{
+            background-color:white;
+        }
+        .setUpButton{
+            margin-bottom:20px;
+        }
+        .main-header{
+            background: white;
+        }
+    </style>
+</head>
+<!-- <script>
+    window.addEventListener("load", myInit, true); function myInit(){ retrieve(), loadTransHist()};
+</script> -->
+<body onload="retrieve()">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="home.html">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h2>NarBank</h2>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <img src="assets/img/logo/narwhal_logo.png" width = 80% height = 80% alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">                                                                                        
+                                                <li><a href="home.html">Home</a></li>
+                                                <li><a href="creditScore.html">My Credit Score</a>
+                                                    <!-- <ul class="submenu">
+                                                        <li><a href="recipeSearch.html">Recipe</a></li>
+                                                        <li><a href="supermarketSearch.html">Supermarket</a></li>
+                                                    </ul> -->
+                                                </li>
+                                                <li class="optionalMealPrep" id=""><a href="getTransactionHistory.html">My Bills</a></li>
+                                                <li><a href="#">Shop Now</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="https://buyandbuildwithalan.company.site/?lang=en&from_admin&vertical=home">Buy and Build with Alan</a></li>
+                                                        <li><a href="">Zara</a></li>
+                                                        <li><a href="">Charles & Keith</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
+                                                </li>
+                                                <li class="optionalLogout" id="" onclick="logout()"><a href="#">Log
+                                                        Out</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Header-btn -->
+                                    <div class="header-right-btn d-none d-lg-block ml-40">
+                                        <a href="profile.html" class="btn optionalProfile" id="">My Profile</a>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="col-3"></div> -->
+                <div class="col contain">
+                    <!-- <form>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-4">
+                                <button id="Send" type="button" class="btn btn-primary">Send</button>
+                                <button type="reset" class="btn btn-default">Clear</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="userID" class="col-sm-4 control-label">User ID</label>
+                            <div class="col-sm-4">
+                                <input id="userID" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="PIN" class="col-sm-4 control-label">PIN</label>
+                            <div class="col-sm-4">
+                                <input id="PIN" type="password" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="accountID" class="col-sm-4 control-label">Account ID</label>
+                            <div class="col-sm-4">
+                                <input id="accountID" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate" class="col-sm-4 control-label">Start Date</label>
+                            <div class="col-sm-4">
+                                <input id="startDate" type="text" class="form-control"/>
+                            </div>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="YYYY-MM-DD HH:MM:SS">See format</a>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate" class="col-sm-4 control-label">End Date</label>
+                            <div class="col-sm-4">
+                                <input id="endDate" type="text" class="form-control"/>
+                            </div>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="YYYY-MM-DD HH:MM:SS">See format</a>
+                        </div>
+                        <div class="form-group">
+                            <label for="numRecordsPerPage" class="col-sm-4 control-label">Number of Records Per Page</label>
+                            <div class="col-sm-4">
+                                <input id="numRecordsPerPage" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pageNum" class="col-sm-4 control-label">Page Number</label>
+                            <div class="col-sm-4">
+                                <input id="pageNum" type="text" class="form-control"/>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-offset-6 col-sm-6">
+                                <button type="reset" class="btn btn-default">Clear</button>
+                            </div>
+                            <div class="col-sm-offset-6 col-sm-6">
+                                <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Send my loan application</button>
+                            </div>
+                        </div>
+                        <br>
+                        <p id="accountID"></p>
+                        <p id="status"></p>
+                        <br>
+                    </form> -->
+
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <input id="tBankID" name="tBankID" type="hidden" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <input id="tBankPIN" name="tBankPIN" type="hidden" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <input id="tBankAcc" name="tBankAcc" type="hidden" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-offset-6 col-sm-6">
+                        <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Send my loan application</button>
+                    </div>
+
+                    <div class="modal fade errorModal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body" id="errorMsg">
+                            <p></p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <h3 style="color:#937851">My Transaction History</h3>
+                        </div>
+                        <table class="table table-striped col-md-12 well">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Transaction ID</th>
+                                    <th>Transaction Name</th>
+                                    <th>Bank ID From</th>
+                                    <th>Account From</th>
+                                    <th>Transaction Amount</th>
+                                    <th>Bank ID To</th>
+                                    <th>Account To</th>
+                                    <th>Exchange Rate</th>
+                                    <th>Currency</th>
+                                    <th>Quote Currency</th>
+                                    <th>Reference Number</th>
+                                    <th>Narrative</th>
+                                </tr>
+                            </thead>
+                            <tbody id="account_table">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            
+    </main>
+    <br>
+    <footer>
+        <div class="footer-wrappper">
+           <!-- Footer Start-->
+           <div class="footer-area footer-padding">
+               <div class="container">
+                       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>Find out more here</h4>
+                                   <div class="footer-social">
+                                       <a href="https://twitter.com/hashtag/mealplanning?lang=en"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.facebook.com/groups/1072274259565166"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.pinterest.com/mealplanmom/_created/"><i class="fab fa-pinterest-p"></i></a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- footer-bottom area -->
+       
+             <!-- Footer End-->
+         </div>
+       </footer>
+    
+    <!-- JS here -->
+    <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
+    <script type="text/javascript" src="./assets/js/logout.js"></script>
+    <script type="text/javascript" src="./assets/js/transactionHistory.js"></script>
+    <!-- <script type="text/javascript" src="./assets/js/applyforloan.js"></script>
+    <script type="text/javascript" src="./assets/js/sendEmail.js"></script> -->
+    
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- counter , waypoint, Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+    
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <!-- <script type="text/javascript" src="./assets/js/sendEmail.js"></script> -->
+    
+    <script type="text/javascript">
+
+        //API URL
+        var ApiURL = "http://tbankonline.com/SMUtBank_API/Gateway";
+            function getApiURL() {
+                return ApiURL;
+            }
+            
+        //UserID
+        var userID = "";
+        function getUserID() {
+            return userID;
+        }
+        function setUserID(x) {
+            userID = x;
+        }
+        
+        //PIN
+        var PIN = "";
+        function getPIN() {
+            return PIN;
+        }
+        function setPIN(x) {
+            PIN = x;
+        }
+
+        function showErrorModal(errorMessage) {
+            document.getElementById("errorMsg").innerHTML = errorMessage;
+            $('#errorModal').modal('show');
+        }
+    
+        $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+        });
+
+        function loadTransHist() {
+            // set service header values
+            
+        }
+    
+        $(document).ready(function () {
+            
+            // init user credentials
+            document.getElementById("tBankID").value = getUserID();
+            document.getElementById("tBankPIN").value = getPIN();
+    
+            /*----------------------------------------
+             * [Send] button clicked
+             */
+
+            
+            $("#Send").click(function (event) {
+                (function() {
+                    var serviceName = "getTransactionHistory";
+                    var userID = document.getElementById("tBankID").value;
+                    setUserID(userID);
+                    var PIN = document.getElementById("tBankPIN").value;
+                    setPIN(PIN);
+                    
+                    
+                    // get and validate form values
+                    var accountID = document.getElementById("tBankAcc").value;
+                    if (accountID === ""){
+                        showErrorModal("Account ID cannot be blank.");
+                        return;  
+                    }
+                    // var startDate = document.getElementById("startDate").value;
+                    // if (startDate === ""){
+                    //     showErrorModal("Start Date cannot be blank.");
+                    //     return;  
+                    // }
+                    // var endDate = document.getElementById("endDate").value;
+                    // if (endDate === ""){
+                    //     showErrorModal("End Date cannot be blank.");
+                    //     return;  
+                    // }
+                    // var numRecordsPerPage = document.getElementById("numRecordsPerPage").value;
+                    // if (numRecordsPerPage === ""){
+                    //     showErrorModal("Number of Records Per Page cannot be blank.");
+                    //     return;  
+                    // }
+                    // var pageNum = document.getElementById("pageNum").value;
+                    // if (pageNum === ""){
+                    //     showErrorModal("Page Number cannot be blank.");
+                    //     return;  
+                    // }
+                    
+                    
+                    // disable Send button
+                    document.getElementById("Send").disabled = true;
+                    $("#account_table").html("");
+    
+                    // set request parameters
+                    var headerObj = {
+                        Header: {
+                            serviceName: serviceName,
+                            userID: userID,
+                            PIN: PIN,
+                            OTP: "999999"
+                        }
+                    };
+                    var contentObj = {
+                        Content: {
+                            accountID: accountID,
+                            startDate: "2022-02-01 00:00:00",
+                            endDate: "2022-03-27 00:00:00",
+                            numRecordsPerPage: "10",
+                            pageNum: "1"
+                        }
+                    };
+                    
+                    var header = JSON.stringify(headerObj);
+                    var content = JSON.stringify(contentObj);
+    
+                    // setup http request
+                    var xmlHttp = new XMLHttpRequest();
+                    if (xmlHttp === null){
+                        alert("Browser does not support HTTP request.");
+                        return;
+                    }
+                    xmlHttp.open("POST", getApiURL()+"?Header="+header+"&Content="+content, true);
+                    xmlHttp.timeout = 5000;
+    
+                    // setup http event handlers
+                    xmlHttp.onreadystatechange = function() {
+                        if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                            responseObj = JSON.parse(xmlHttp.responseText);
+                            serviceRespHeader = responseObj.Content.ServiceResponse.ServiceRespHeader;
+                            globalErrorID = serviceRespHeader.GlobalErrorID;
+                            if (globalErrorID === "010041"){
+                                showOTPModal();
+                                return;
+                            }
+                            else if (globalErrorID !== "010000"){
+                                showErrorModal(serviceRespHeader.ErrorDetails);
+                                return;
+                            }
+                            
+                            // get data
+                            CDMTransactionDetail = responseObj.Content.ServiceResponse.CDMTransactionDetail;
+                            transaction_Detail = CDMTransactionDetail.transaction_Detail;
+                            var recordCount = getRecordCount(CDMTransactionDetail);
+                            
+                            // display data
+                            var htmlcode = "";
+                            for(var i = 0; i < recordCount; i++){
+                                var d = (recordCount===1)?transaction_Detail:transaction_Detail[i];
+                                htmlcode += "<tr>";
+                                htmlcode += "<td>" + d.transactionDate + "</td>";
+                                htmlcode += "<td>" + d.transactionID + "</td>";
+                                htmlcode += "<td>" + d.transactionType + "</td>";
+                                htmlcode += "<td>" + d.bankID_from + "</td>";
+                                htmlcode += "<td>" + d.accountFrom + "</td>";
+                                htmlcode += "<td>" + d.transactionAmount + "</td>";
+                                htmlcode += "<td>" + d.bankID_to + "</td>";
+                                htmlcode += "<td>" + d.accountTo + "</td>";
+                                htmlcode += "<td>" + d.exchangeRate + "</td>";
+                                htmlcode += "<td>" + d.currency + "</td>";
+                                htmlcode += "<td>" + d.quoteCurrency + "</td>";
+                                htmlcode += "<td>" + d.transactionReferenceNumber + "</td>";
+                                htmlcode += "<td>" + d.narrative + "</td>";
+                                htmlcode += "</tr>";
+                            }
+                            $("#account_table").html(htmlcode);
+                            
+                            // enable Send button
+                            document.getElementById("Send").disabled = false;
+                        }
+                    };
+                    xmlHttp.ontimeout = function (e) {
+                        showErrorModal("Timeout invoking API.");
+                        return;
+                    };					
+    
+                    // send the http request
+                    xmlHttp.send();
+                    
+    
+                })();
+            });
+    
+            /* ----------------------------------------
+             * error model close button clicked
+             */
+            $("#CloseError").click(function (event) {
+                (function() {
+                    document.getElementById("Send").disabled = false;
+                })();
+            });
+    
+            /* ----------------------------------------
+             * OTP model update button clicked
+             */
+            $("#UpdateOTP").click(function (event) {
+                (function() {
+                    var OTP = document.getElementById("OTP").value;
+                    setOTP(OTP, function() { // ensure OTP set before clicking Send
+                        document.getElementById("Send").disabled = false;
+                        document.getElementById("Send").click();
+                    });
+                })();
+            });
+            
+            /* ----------------------------------------
+             * get record count
+             */
+            function getRecordCount(CDMTransactionDetail) {
+                if (Object.keys(CDMTransactionDetail).length === 0){
+                    showErrorModal("Customer has no transaction history.");
+                    return 0;
+                }
+                if (CDMTransactionDetail.transaction_Detail.length === undefined)
+                    return 1;
+                return CDMTransactionDetail.transaction_Detail.length;
+            }
+    
+        });
+        
+        </script>
+        
+
+</body>
+</html>
