@@ -179,6 +179,7 @@ function calc_util_point() {
   }
 }
 
+//original btn
 function apply_loan_btn() {
   var creditScore = document.getElementById("creditScore").value;
 
@@ -186,12 +187,16 @@ function apply_loan_btn() {
     var myDiv = document.getElementById("apply_btn");
 
     // creating button element
-    var str = `<a href="./confirmLoanApplication.html" class="btn btn-primary">Apply for Bank Loan</></a>`;
+    var str = `<a href="./confirmLoanApplication.html" class="btn btn-primary" id="apply_123">Apply for Bank Loan</a>`;
     myDiv.innerHTML = str;
   } else {
+    // var pre_btn = document.getElementById("apply_btn");
+    // pre_btn.parentNode.removeChild(pre_btn);
+
     var myDiv = document.getElementById("apply_btn");
 
     var para = document.createElement("p");
+
     var textNode = document.createTextNode(
       "Sorry, you are not eligible for loan."
     );
@@ -199,6 +204,41 @@ function apply_loan_btn() {
     myDiv.append(para);
   }
 }
+
+// function apply_loan_btn() {
+//   var creditScore = document.getElementById("creditScore").value;
+
+//   if (creditScore >= 600) {
+//     var myDiv = document.getElementById("apply_btn");
+
+//     var a = document.createElement('a');
+//     a.setAttribute('href',"./confirmLoanApplication.html");
+//     a.setAttribute("id", "apply_123");
+//     a.setAttribute("class", "btn btn-primary");
+//     a.innerHTML = "Apply for Bank Loan";
+//     // append the anchor to the body
+//     // of course you can append it almost to any other dom element
+//     document.getElementsByTagName('body')[0].appendChild(a);
+//     myDiv.append(a);
+
+//     var text = document.getElementById("text");
+//     text.parentNode.removeChild(text);
+
+//   } else {
+//     var pre_btn = document.getElementById("apply_123");
+//     pre_btn.parentNode.removeChild(pre_btn);
+
+//     var myDiv = document.getElementById("apply_btn");
+
+//     var para = document.createElement("p");
+//     para.setAttribute("id", "text");
+//     var textNode = document.createTextNode(
+//       "Sorry, you are not eligible for loan."
+//     );
+//     para.appendChild(textNode);
+//     myDiv.append(para);
+//   }
+// }
 
 //Calculate total points
 function calculate_score() {
