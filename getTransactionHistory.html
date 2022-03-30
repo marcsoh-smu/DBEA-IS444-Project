@@ -393,8 +393,6 @@
                     setUserID(userID);
                     var PIN = document.getElementById("tBankPIN").value;
                     setPIN(PIN);
-                    document.getElementById("status").style.display="none";
-                    
                     
                     // get and validate form values
                     var accountID = document.getElementById("tBankAcc").value;
@@ -515,8 +513,8 @@
                             }
                             $("#table").html(htmlcode);
                             
+                            document.getElementById("status").style.display="none";
                             // enable Send button
-                            // status.setAttribute("type", "hidden");
                             document.getElementById("Send").disabled = false;
                         }
                     };
