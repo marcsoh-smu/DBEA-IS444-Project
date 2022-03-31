@@ -201,7 +201,7 @@ function apply_loan_btn() {
 function calculate_score() {
   var annual_inc_point = calc_annual_income_point(annualIncome);
   // console.log("annual_inc_point")
-  console.log(annual_inc_point);
+  // console.log(annual_inc_point);
   var mort_acc_point = calc_mort_acc_point(mortAcc);
   // console.log("mort_acc_point")
   // console.log(mort_acc_point)
@@ -239,17 +239,3 @@ function calculate_score() {
     loan_amount_point;
 
   document.getElementById("creditScore").value = total;
-  // if(total <= 600) {
-  //   document.getElementById("apply_loan_btn").style.display = "none";
-  // }
-  // else {
-  //   document.getElementById("apply_loan_btn").style.display = "";
-  // }
-
-  // console.log("creditScore")
-  // console.log(total)
-}
-
-// function display_apply_loan_btn() {
-
-// }
