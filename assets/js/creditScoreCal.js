@@ -197,7 +197,6 @@ function apply_loan_btn() {
   }
 }
 
-//Calculate total points
 function calculate_score() {
   var annual_inc_point = calc_annual_income_point(annualIncome);
   // console.log("annual_inc_point")
@@ -211,7 +210,6 @@ function calculate_score() {
   var loan_amount_point = calc_loan_amount_point(loanAmount);
   // console.log("loan_amount_point")
   // console.log(loan_amount_point)
-
   //interest default 6% 138points
   // var int_rate_point = calc_int_rate_point(interestRate);
   // console.log("int_rate_point")
@@ -239,3 +237,124 @@ function calculate_score() {
     loan_amount_point;
 
   document.getElementById("creditScore").value = total;
+
+}
+
+// function recommend() {
+//   var total = calculate_score();
+//   var myDiv = document.getElementById("recommend");
+
+//   var annualIncome = parseFloat(document.getElementById("annualIncome").value);
+//   var dti_point = calc_dti_point();
+//   var monthlyCreditLimit = parseFloat(
+//       document.getElementById("monthlyCreditLimit").value
+//     );
+//   var numberOfMonths = document.getElementById("numberOfMonths").value;
+
+
+//   if (total < 600) {
+//       var str = "";
+//     if (numberOfMonths == 24) {
+//       str += "Reduce loan term to 12 months.";
+
+//       if (total < 600) {
+//           var monthly_inc = annualIncome/12;
+//           var increase  = 0;
+
+//           if (dti_point != 0 && monthly_inc !=0) {
+//               if (dti_point >= 13 && dti_point <= 20) {
+//                   var dti_point = 12;
+//                   var monthly_debt = (dti_point/100) * (monthly_inc);
+//                   str += "Reduce monthly debt obligations to " + str(int(monthly_debt))+ "."; 
+//                   total += 14
+
+//                   if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+//                       let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+//                       let upoint = calc_util_point(util_rate)
+//                       let increase = upoint - util_point
+                      
+//                       total += increase
+//                   }
+//                   else if (dti_point >= 21 && dti_point < 26.0) {
+//                       dti_point = 20.0
+//                       monthly_debt = (dti_point/100) * (monthly_inc)
+//                       str += "Reduce monthly debt obligations to " + str(int(monthly_debt))+ "."
+//                       total += 12
+                      
+//                       if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+//                           let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+//                           let upoint = calc_util_point(util_rate)
+//                           let increase = upoint - util_point
+                          
+//                           total += increase
+//                       }
+//                   }
+//                   else if (dti_point >= 26 && dti_point < 30) {
+//                       dti_point = 25.0
+//                       monthly_debt = (dti_point/100) * (monthly_inc)
+//                       str += "Reduce monthly debt obligations to " + str(int(monthly_debt))+ "."
+//                       total += 8
+                      
+//                       if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+//                           let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+//                           let upoint = calc_util_point(util_rate)
+//                           let increase = upoint - util_point
+                          
+//                           total += increase
+//                       }
+//                   }
+//                   else if (dti_point >= 30 && dti_point < 100) {
+//                       dti_point = 29.0
+//                       monthly_debt = (dti_point/100) * (monthly_inc)
+//                       str += "Reduce monthly debt obligations to " + str(int(monthly_debt))+ "."
+//                       total += 8
+                      
+//                       if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+//                           let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+//                           let upoint = calc_util_point(util_rate)
+//                           let increase = upoint - util_point
+                          
+//                           total += increase
+//                       }
+//                   }
+//                   monthly_debt = int(monthly_debt)
+//               }
+//           }
+//           if (increase != 0) {
+//               str += ("Credit score: " + str(total) + " (after reduction in monthly debt obligations)"
+//           }
+//           if (total < 600) {
+
+//               if (loan_amt > 3999) {
+//                   if (loan_amt < 10000) {
+//                       loan_amt = 3999
+//                       str += "Reduce loan amount to < $4000."
+//                       total += 7
+//                   }
+//                   else if (loan_amt < 16000) {
+//                       loan_amt = 9999
+//                       str += "Reduce loan amount to < $10000."
+//                       total += 10
+//                   }
+//                   else {
+//                       loan_amt = 15999
+//                       str += "Reduce loan amount to < $16000."
+//                       total += 7
+//                   }
+//                   str += "Credit score: " + str(total) + " (after reduction in loan amount)"
+//               }
+//               if (total < 600) {
+//                   str += "No recommendations are available for customer to achieve 600 points. Please alter details manually."
+//               }
+//           }
+//       }
+//     }
+//   }
+//   if (str != "") {
+//       myDiv.innerHTML = str;
+//   }
+//   else {
+//       myDiv.setAttribute("type", "hidden");
+//   }
+  
+// }
