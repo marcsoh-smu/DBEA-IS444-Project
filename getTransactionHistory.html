@@ -26,6 +26,7 @@
         .contain{
             background-color:white;
             border:2px solid #23819d;
+            /* block-size: 12cm; */
         }
         .mainForm{
             background-color:white;
@@ -111,7 +112,7 @@
                                                         <li><a href="supermarketSearch.html">Supermarket</a></li>
                                                     </ul> -->
                                                 </li>
-                                                <li class="optionalMealPrep" id=""><a href="getTransactionHistory.html">My Bills</a></li>
+                                                <li class="optionalMealPrep" id=""><a href="getTransactionHistory.html">My Transaction History</a></li>
                                                 <li><a href="#">Shop Now</a>
                                                     <ul class="submenu">
                                                         <li><a href="https://buyandbuildwithalan.company.site/?lang=en&from_admin&vertical=home">Buy and Build with Alan</a></li>
@@ -147,75 +148,8 @@
         <br>
         <div class="container-fluid">
             <div class="row">
-                <!-- <div class="col-3"></div> -->
-                <div class="col contain">
-                    <!-- <form>
-                        <div class="form-group">
-                            <div class="col-sm-offset-4 col-sm-4">
-                                <button id="Send" type="button" class="btn btn-primary">Send</button>
-                                <button type="reset" class="btn btn-default">Clear</button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="userID" class="col-sm-4 control-label">User ID</label>
-                            <div class="col-sm-4">
-                                <input id="userID" type="text" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="PIN" class="col-sm-4 control-label">PIN</label>
-                            <div class="col-sm-4">
-                                <input id="PIN" type="password" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="accountID" class="col-sm-4 control-label">Account ID</label>
-                            <div class="col-sm-4">
-                                <input id="accountID" type="text" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="startDate" class="col-sm-4 control-label">Start Date</label>
-                            <div class="col-sm-4">
-                                <input id="startDate" type="text" class="form-control"/>
-                            </div>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="YYYY-MM-DD HH:MM:SS">See format</a>
-                        </div>
-                        <div class="form-group">
-                            <label for="endDate" class="col-sm-4 control-label">End Date</label>
-                            <div class="col-sm-4">
-                                <input id="endDate" type="text" class="form-control"/>
-                            </div>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="YYYY-MM-DD HH:MM:SS">See format</a>
-                        </div>
-                        <div class="form-group">
-                            <label for="numRecordsPerPage" class="col-sm-4 control-label">Number of Records Per Page</label>
-                            <div class="col-sm-4">
-                                <input id="numRecordsPerPage" type="text" class="form-control"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="pageNum" class="col-sm-4 control-label">Page Number</label>
-                            <div class="col-sm-4">
-                                <input id="pageNum" type="text" class="form-control"/>
-                            </div>
-                        </div>
-
-                        <br>
-                        <div class="row">
-                            <div class="col-sm-offset-6 col-sm-6">
-                                <button type="reset" class="btn btn-default">Clear</button>
-                            </div>
-                            <div class="col-sm-offset-6 col-sm-6">
-                                <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Send my loan application</button>
-                            </div>
-                        </div>
-                        <br>
-                        <p id="accountID"></p>
-                        <p id="status"></p>
-                        <br>
-                    </form> -->
-
+                <div class="col-2"></div>
+                <div class="col-8 contain">
                     <div class="form-group">
                         <div class="col-sm-4">
                             <input id="tBankID" name="tBankID" type="hidden" class="form-control"/>
@@ -230,9 +164,6 @@
                         <div class="col-sm-4">
                             <input id="tBankAcc" name="tBankAcc" type="hidden" class="form-control"/>
                         </div>
-                    </div>
-                    <div class="col-sm-offset-6 col-sm-6">
-                        <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Send my loan application</button>
                     </div>
 
                     <div class="modal fade errorModal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -257,37 +188,81 @@
 
                     <div class="container">
                         <div class="row">
-                            <h3 style="color:#937851">My Transaction History</h3>
+                            <div class="col">
+                                <h3 style="color:#937851">My Transaction History</h3>
+                            </div>
+                            
+                            <br>
+                            <br>
+                            <!-- <div col-2></div> -->
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                  <!-- Home Ownership: <input type="text" class="form-control" name="homeownership" id="homeOwnership" value="" > -->
+                                  <label for="startDate" class="col control-label">From the Month of:</label>
+                                  <select name="startDate" id="startDate">
+                                      <option value="" selected>Select Month Below</option>
+                                      <option value="2022-01-01 00:00:00">January</option>
+                                      <option value="2022-02-01 00:00:00">February</option>
+                                      <option value="2022-03-01 00:00:00">March</option>
+                                      <option value="2022-04-01 00:00:00">April</option>
+                                      <option value="2022-05-01 00:00:00">May</option>
+                                      <option value="2022-06-01 00:00:00">June</option>
+                                      <option value="2022-07-01 00:00:00">July</option>
+                                      <option value="2022-08-01 00:00:00">August</option>
+                                      <option value="2022-09-01 00:00:00">September</option>
+                                      <option value="2022-10-01 00:00:00">October</option>
+                                      <option value="2022-11-01 00:00:00">November</option>
+                                      <option value="2022-12-01 00:00:00">December</option>
+                                  </select>
+  
+                                </div>
+                                <div class="col-1"></div> 
+                                <div class="col-3">
+                                    <label for="endDate" class="col control-label">To the Month of:</label>
+                                    <select name="endDate" id="endDate">
+                                        <option value="" selected>Select Month Below</option>
+                                        <option value="2022-01-31 00:00:00">January</option>
+                                        <option value="2022-02-28 00:00:00">February</option>
+                                        <option value="2022-03-31 00:00:00">March</option>
+                                        <option value="2022-04-30 00:00:00">April</option>
+                                        <option value="2022-05-31 00:00:00">May</option>
+                                        <option value="2022-06-30 00:00:00">June</option>
+                                        <option value="2022-07-31 00:00:00">July</option>
+                                        <option value="2022-08-31 00:00:00">August</option>
+                                        <option value="2022-09-30 00:00:00">September</option>
+                                        <option value="2022-10-31 00:00:00">October</option>
+                                        <option value="2022-11-30 00:00:00">November</option>
+                                        <option value="2022-12-31 00:00:00">December</option>
+                                    </select>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <label for="sendBtn" class="col control-label"></label>
+                                    <button id="Send" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Search</button>
+                                </div>
+                                
+                              </div>
+                            </div> <br> 
+                            <br>
                         </div>
-                        <table class="table table-striped col-md-12 well">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Transaction ID</th>
-                                    <th>Transaction Name</th>
-                                    <th>Bank ID From</th>
-                                    <th>Account From</th>
-                                    <th>Transaction Amount</th>
-                                    <th>Bank ID To</th>
-                                    <th>Account To</th>
-                                    <th>Exchange Rate</th>
-                                    <th>Currency</th>
-                                    <th>Quote Currency</th>
-                                    <th>Reference Number</th>
-                                    <th>Narrative</th>
-                                </tr>
-                            </thead>
-                            <tbody id="account_table">
-                            </tbody>
+                        <div id="status" style="margin-top: 60px; margin-left:310px; margin-bottom: 150px;">
+                            <p>No transactions found</p>
+                        </div>
+                        <table id="table" class="table table-striped col-md-12 well">
+                            
                         </table>
                     </div>
-                </div>
-
-            
+                    <br>
+                </div>  
+                 
     </main>
     <br>
+    <br>
+    <br>
+    <br>
     <footer>
-        <div class="footer-wrappper">
+        <div class="footer-wrappper" >
            <!-- Footer Start-->
            <div class="footer-area footer-padding">
                <div class="container">
@@ -419,23 +394,22 @@
                     var PIN = document.getElementById("tBankPIN").value;
                     setPIN(PIN);
                     
-                    
                     // get and validate form values
                     var accountID = document.getElementById("tBankAcc").value;
                     if (accountID === ""){
                         showErrorModal("Account ID cannot be blank.");
                         return;  
                     }
-                    // var startDate = document.getElementById("startDate").value;
-                    // if (startDate === ""){
-                    //     showErrorModal("Start Date cannot be blank.");
-                    //     return;  
-                    // }
-                    // var endDate = document.getElementById("endDate").value;
-                    // if (endDate === ""){
-                    //     showErrorModal("End Date cannot be blank.");
-                    //     return;  
-                    // }
+                    var startDate = document.getElementById("startDate").value;
+                    if (startDate === ""){
+                        showErrorModal("Start Date cannot be blank.");
+                        return;  
+                    }
+                    var endDate = document.getElementById("endDate").value;
+                    if (endDate === ""){
+                        showErrorModal("End Date cannot be blank.");
+                        return;  
+                    }
                     // var numRecordsPerPage = document.getElementById("numRecordsPerPage").value;
                     // if (numRecordsPerPage === ""){
                     //     showErrorModal("Number of Records Per Page cannot be blank.");
@@ -464,8 +438,8 @@
                     var contentObj = {
                         Content: {
                             accountID: accountID,
-                            startDate: "2022-02-01 00:00:00",
-                            endDate: "2022-03-27 00:00:00",
+                            startDate: startDate,
+                            endDate: endDate,
                             numRecordsPerPage: "10",
                             pageNum: "1"
                         }
@@ -482,7 +456,7 @@
                     }
                     xmlHttp.open("POST", getApiURL()+"?Header="+header+"&Content="+content, true);
                     xmlHttp.timeout = 5000;
-    
+                    
                     // setup http event handlers
                     xmlHttp.onreadystatechange = function() {
                         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
@@ -501,30 +475,45 @@
                             // get data
                             CDMTransactionDetail = responseObj.Content.ServiceResponse.CDMTransactionDetail;
                             transaction_Detail = CDMTransactionDetail.transaction_Detail;
+                            
                             var recordCount = getRecordCount(CDMTransactionDetail);
                             
                             // display data
                             var htmlcode = "";
+                            htmlcode = `<thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Transaction ID</th>
+                                                <th>Account From</th>
+                                                <th>Transaction Amount</th>
+                                                <th>Account To</th>
+                                                <th>Reference Number</th>
+                                                <th>Notes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="account_table">
+                                        </tbody>`
                             for(var i = 0; i < recordCount; i++){
                                 var d = (recordCount===1)?transaction_Detail:transaction_Detail[i];
                                 htmlcode += "<tr>";
                                 htmlcode += "<td>" + d.transactionDate + "</td>";
                                 htmlcode += "<td>" + d.transactionID + "</td>";
-                                htmlcode += "<td>" + d.transactionType + "</td>";
-                                htmlcode += "<td>" + d.bankID_from + "</td>";
+                                // htmlcode += "<td>" + d.transactionType + "</td>";
+                                // htmlcode += "<td>" + d.bankID_from + "</td>";
                                 htmlcode += "<td>" + d.accountFrom + "</td>";
                                 htmlcode += "<td>" + d.transactionAmount + "</td>";
-                                htmlcode += "<td>" + d.bankID_to + "</td>";
+                                // htmlcode += "<td>" + d.bankID_to + "</td>";
                                 htmlcode += "<td>" + d.accountTo + "</td>";
-                                htmlcode += "<td>" + d.exchangeRate + "</td>";
-                                htmlcode += "<td>" + d.currency + "</td>";
-                                htmlcode += "<td>" + d.quoteCurrency + "</td>";
+                                // htmlcode += "<td>" + d.exchangeRate + "</td>";
+                                // htmlcode += "<td>" + d.currency + "</td>";
+                                // htmlcode += "<td>" + d.quoteCurrency + "</td>";
                                 htmlcode += "<td>" + d.transactionReferenceNumber + "</td>";
                                 htmlcode += "<td>" + d.narrative + "</td>";
                                 htmlcode += "</tr>";
                             }
-                            $("#account_table").html(htmlcode);
+                            $("#table").html(htmlcode);
                             
+                            document.getElementById("status").style.display="none";
                             // enable Send button
                             document.getElementById("Send").disabled = false;
                         }
