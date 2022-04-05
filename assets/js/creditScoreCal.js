@@ -180,9 +180,27 @@ function calc_util_point() {
 }
 
 //original btn
+// function apply_loan_btn() {
+//   var creditScore = document.getElementById("creditScore").value;
+//   var myDiv = document.getElementById("apply_btn");
+
+//   if (creditScore >= 600) {
+    
+//     // creating button element
+//     var str = `<a href="./confirmLoanApplication.html" class="btn btn-primary" id="apply_123">Apply for Bank Loan</a>`;
+//     myDiv.innerHTML = str;
+//   } else if (creditScore < 600) {
+
+//     myDiv.setAttribute("type", "hidden");
+//     myDiv.innerHTML = "<p>Sorry, you are not eligible for loan.</p>";
+    
+//   }
+// }
+
 function apply_loan_btn() {
   var creditScore = document.getElementById("creditScore").value;
   var myDiv = document.getElementById("apply_btn");
+  var recommend = document.getElementById("recommend");
 
   if (creditScore >= 600) {
     
@@ -194,6 +212,8 @@ function apply_loan_btn() {
     myDiv.setAttribute("type", "hidden");
     myDiv.innerHTML = "<p>Sorry, you are not eligible for loan.</p>";
     
+    var str = `<input type="button" value="recommend" onclick="recommend();"/>`;
+    recommend.innerHTML = str;
   }
 }
 
