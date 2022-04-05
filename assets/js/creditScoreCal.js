@@ -258,6 +258,8 @@ function calculate_score() {
 
   document.getElementById("creditScore").value = total;
 
+  // var myDiv = document.getElementById("recommend");
+  // myDiv.setAttribute("type", "hidden");
 }
 
 function recommend() {
