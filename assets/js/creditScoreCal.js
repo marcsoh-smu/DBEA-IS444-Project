@@ -285,7 +285,7 @@ function recommend() {
           var increase  = 0;
 
           if (dti_point != 0 && monthly_inc !=0) {
-              if (dti_point >= 13 && dti_point <= 21) {
+              if (dti_point >= 13 && dti_point < 21) {
                   var dti_point = 12;
                   var monthly_debt = (dti_point/100) * (monthly_inc);
                   str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"; 
@@ -340,7 +340,7 @@ function recommend() {
                           score += increase
                       }
                   }
-                  monthly_debt = int(monthly_debt)
+                  monthly_debt = parseFloat(monthly_debt)
               }
           }
           if (increase != 0) {
