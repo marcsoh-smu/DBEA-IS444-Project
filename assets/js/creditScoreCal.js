@@ -294,18 +294,18 @@ function recommend() {
 
       if (dti_point != 0 && monthly_inc !=0) {
           if (dti_point >= 13 && dti_point < 21) {
-              var dti_point = 12;
-              var monthly_debt = (dti_point/100) * (monthly_inc);
-              str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"; 
-              score += 14
+            var dti_point = 12;
+            var monthly_debt = (dti_point/100) * (monthly_inc);
+            str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"; 
+            score += 14
 
-              if (monthlyCreditLimit != 0 && monthly_debt != 0) {
-                  let util_rate = (monthly_debt/monthlyCreditLimit) * 100
-                  let point = calc_util_point(util_rate)
-                  increase = point - util_point
-                  
-                  score += increase
-              }
+            if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+                let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+                let point = calc_util_point(util_rate)
+                increase = point - util_point
+                
+                score += increase
+            }
           }
           else if (dti_point >= 21 && dti_point < 26.0) {
             dti_point = 20.0
