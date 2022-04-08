@@ -274,9 +274,12 @@ function recommend() {
     );
   var numberOfMonths = document.getElementById("numberOfMonths").value;
   var loanAmount = parseFloat(document.getElementById("loanAmount").value);
+  var monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
 
   var str = "";
   var score = parseFloat(document.getElementById("creditScore").value);
+  
+  var dti_point = get_dti(annualIncome, monthlyDebt);
 
   if (score < 600) {
     //loan term reduction
