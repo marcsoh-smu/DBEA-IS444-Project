@@ -145,7 +145,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3"></div>
-                <div class="col-6 contain">
+                <div class="col-6 contain"> <br>
+                    <button type="button" class="btn-3 btn-secondary btn-sm" onclick="javascript:history.back()">Back</button>
                     <p class="profileSetUp"> Loan Account Details</p>
                     <form>
                         <div class="form-group">
@@ -170,26 +171,25 @@
                             </div>
                         </div>
                         <br>
-                        <br>
 
                         <!-- OUTPUT OF LOAN ACCOUNT DETAILS-->  
                             <div class="container">
                                 <p class="profileSetUp"> Loan Account Details</p>
                                 <div class="row">
                                   <div class="col">
+                                    Current Status:  <input id="currentStatus" type="text" class="form-control" disabled/>
+                                  </div>
+                                  <div class="col">
                                     Interest Rate: <input id="interestRate" type="text" class="form-control" disabled/>
                                   </div>
                                   <div class="col">
                                     Interest Rate Basis: <input id="compoundInterestRateBasis" type="text" class="form-control" disabled/>
                                   </div>
-                                  <div class="col">
-                                    Product Name: <input id="productName" type="text" class="form-control" disabled/>
-                                  </div>
                                 </div> <br>
         
                                 <div class="row">
                                   <div class="col">
-                                    Current Status:  <input id="currentStatus" type="text" class="form-control" disabled/>
+                                    Product Name: <input id="productName" type="text" class="form-control" disabled/>
                                   </div>
                                   <div class="col">
                                     Account Open Date: <input id="accountOpenDate" type="text" class="form-control" disabled/>
