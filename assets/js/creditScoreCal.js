@@ -263,7 +263,7 @@ function calculate_score() {
 }
 
 function recommend() {
-  var score = parseFloat(document.getElementById("creditScore").value);
+  
   var myDiv = document.getElementById("recommend");
 
   var annualIncome = parseFloat(document.getElementById("annualIncome").value);
@@ -275,104 +275,110 @@ function recommend() {
   var numberOfMonths = document.getElementById("numberOfMonths").value;
   var loanAmount = parseFloat(document.getElementById("loanAmount").value);
 
+  var str = "";
+  var score = parseFloat(document.getElementById("creditScore").value);
+
   if (score < 600) {
-      var str = "";
+    //loan term reduction
     if (numberOfMonths == 24) {
       str += "<br><p>Reduce loan term to 12 months.</p>";
       score += 36;
-      if (score < 600) {
-          var monthly_inc = annualIncome/12;
-          var increase  = 0;
-
-          if (dti_point != 0 && monthly_inc !=0) {
-              if (dti_point >= 13 && dti_point < 21) {
-                  var dti_point = 12;
-                  var monthly_debt = (dti_point/100) * (monthly_inc);
-                  str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"; 
-                  score += 14
-
-                  if (monthlyCreditLimit != 0 && monthly_debt != 0) {
-                      let util_rate = (monthly_debt/monthlyCreditLimit) * 100
-                      let point = calc_util_point(util_rate)
-                      increase = point - util_point
-                      
-                      score += increase
-                  }
-                  else if (dti_point >= 21 && dti_point < 26.0) {
-                      dti_point = 20.0
-                      monthly_debt = (dti_point/100) * (monthly_inc)
-                      str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
-                      score += 12
-                      
-                      if (monthlyCreditLimit != 0 && monthly_debt != 0) {
-                          let util_rate = (monthly_debt/monthlyCreditLimit) * 100
-                          let point = calc_util_point(util_rate)
-                          increase = point - util_point
-                          
-                          score += increase
-                      }
-                  }
-                  else if (dti_point >= 26 && dti_point < 30) {
-                      dti_point = 25.0
-                      monthly_debt = (dti_point/100) * (monthly_inc)
-                      str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
-                      score += 8
-                      
-                      if (monthlyCreditLimit != 0 && monthly_debt != 0) {
-                          let util_rate = (monthly_debt/monthlyCreditLimit) * 100
-                          let point = calc_util_point(util_rate)
-                          increase = point - util_point
-                          
-                          score += increase
-                      }
-                  }
-                  else if (dti_point >= 30 && dti_point < 100) {
-                      dti_point = 29.0
-                      monthly_debt = (dti_point/100) * (monthly_inc)
-                      str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
-                      score += 11
-                      
-                      if (monthlyCreditLimit != 0 && monthly_debt != 0) {
-                          let util_rate = (monthly_debt/monthlyCreditLimit) * 100
-                          let point = calc_util_point(util_rate)
-                          increase = point - util_point
-                          
-                          score += increase
-                      }
-                  }
-                  monthly_debt = parseFloat(monthly_debt)
-              }
-          }
-          if (increase != 0) {
-              str += ("<br><p>Credit score: " + String(score) + " (after reduction in monthly debt obligations)</p>");
-          }
-          if (score < 600) {
-
-              if (loanAmount > 3999) {
-                  if (loanAmount < 10000) {
-                      loanAmount = 3999
-                      str += "<br><p>Reduce loan amount to < $4000.</p>"
-                      score += 7
-                  }
-                  else if (loanAmount < 16000) {
-                      loanAmount = 9999
-                      str += "<br><p>Reduce loan amount to < $10000.</p>"
-                      score += 10
-                  }
-                  else {
-                      loanAmount = 15999
-                      str += "<br><p>Reduce loan amount to < $16000.</p>"
-                      score += 7
-                  }
-                  str += "<br><p>Credit score: " + String(score) + " (after reduction in loan amount)</p>"
-              }
-              if (score < 600) {
-                  str += "<br><p>No recommendations are available for customer to achieve 600 points. Please alter details manually.</p>"
-              }
-          }
-      }
-      
     }
+
+    //if score still < 600
+    if (score < 600) {
+      //reduce monthly debt obligations - improve util rate at the same time
+      var monthly_inc = annualIncome/12;
+      var monthly_debt = 0;
+      var increase  = 0;
+
+      if (dti_point != 0 && monthly_inc !=0) {
+          if (dti_point >= 13 && dti_point < 21) {
+              var dti_point = 12;
+              var monthly_debt = (dti_point/100) * (monthly_inc);
+              str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"; 
+              score += 14
+
+              if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+                  let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+                  let point = calc_util_point(util_rate)
+                  increase = point - util_point
+                  
+                  score += increase
+              }
+          }
+          else if (dti_point >= 21 && dti_point < 26.0) {
+            dti_point = 20.0
+            monthly_debt = (dti_point/100) * (monthly_inc)
+            str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
+            score += 12
+            
+            if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+                let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+                let point = calc_util_point(util_rate)
+                increase = point - util_point
+                
+                score += increase
+            }
+          }
+          else if (dti_point >= 26 && dti_point < 30) {
+              dti_point = 25.0
+              monthly_debt = (dti_point/100) * (monthly_inc)
+              str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
+              score += 8
+              
+              if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+                  let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+                  let point = calc_util_point(util_rate)
+                  increase = point - util_point
+                  
+                  score += increase
+              }
+          }
+          else if (dti_point >= 30 && dti_point < 100) {
+              dti_point = 29.0
+              monthly_debt = (dti_point/100) * (monthly_inc)
+              str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
+              score += 11
+              
+              if (monthlyCreditLimit != 0 && monthly_debt != 0) {
+                  let util_rate = (monthly_debt/monthlyCreditLimit) * 100
+                  let point = calc_util_point(util_rate)
+                  increase = point - util_point
+                  
+                  score += increase
+              }
+          }
+          monthly_debt = parseFloat(monthly_debt)
+      }
+      if (increase != 0) {
+          str += ("<br><p>Credit score: " + String(score) + " (after reduction in monthly debt obligations)</p>");
+      }
+      if (score < 600) {
+
+        if (loanAmount > 3999) {
+            if (loanAmount < 10000) {
+                loanAmount = 3999
+                str += "<br><p>Reduce loan amount to < $4000.</p>"
+                score += 7
+            }
+            else if (loanAmount < 16000) {
+                loanAmount = 9999
+                str += "<br><p>Reduce loan amount to < $10000.</p>"
+                score += 10
+            }
+            else {
+                loanAmount = 15999
+                str += "<br><p>Reduce loan amount to < $16000.</p>"
+                score += 7
+            }
+            str += "<br><p>Credit score: " + String(score) + " (after reduction in loan amount)</p>"
+        }
+        if (score < 600) {
+            str += "<br><p>No recommendations are available for customer to achieve 600 points. Please alter details manually.</p>"
+        }
+      }
+  }
   }
   if (str != "") {
       myDiv.innerHTML = str;
