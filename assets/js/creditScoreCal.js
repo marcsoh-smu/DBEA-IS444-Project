@@ -165,15 +165,15 @@ function calc_util_point() {
   var util = get_util_rate(monthlyCreditLimit, monthlyDebt);
   var util_rate = util.toFixed(2);
 
-  if (0 <= util && util < 20.0) {
+  if (0 <= util_rate && util_rate < 20.0) {
     return 69;
-  } else if (20.0 <= util && util < 40.0) {
+  } else if (20.0 <= util_rate && util_rate < 40.0) {
     return 64;
-  } else if (40.0 <= util && util < 65.0) {
+  } else if (40.0 <= util_rate && util_rate < 65.0) {
     return 60;
-  } else if (65.0 <= util && util < 90.0) {
+  } else if (65.0 <= util_rate && util_rate < 90.0) {
     return 58;
-  } else if (util >= 90.0) {
+  } else if (util_rate >= 90.0) {
     return 55;
   } else {
     return "Error calc util";
