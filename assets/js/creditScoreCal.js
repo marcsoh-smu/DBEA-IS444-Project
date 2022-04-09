@@ -157,12 +157,12 @@ function get_util_rate() {
 }
 // Utilization points
 function calc_util_point() {
-  var monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
-  var monthlyCreditLimit = parseFloat(
-    document.getElementById("monthlyCreditLimit").value
-  );
+  // var monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
+  // var monthlyCreditLimit = parseFloat(
+  //   document.getElementById("monthlyCreditLimit").value
+  // );
 
-  var util = get_util_rate(monthlyCreditLimit, monthlyDebt);
+  var util = get_util_rate();
   var util_rate = util.toFixed(2);
 
   if (0 <= util_rate && util_rate < 20.0) {
@@ -241,11 +241,11 @@ function calculate_score() {
   // console.log(term_point)
 
   var dti_point = calc_dti_point();
-  // console.log("dti_point")
-  // console.log(dti_point)
+  console.log("dti_point")
+  console.log(dti_point)
   var util_point = calc_util_point();
-  // console.log("util_point")
-  // console.log(util_point)
+  console.log("util_point")
+  console.log(util_point)
 
   var total =
     annual_inc_point +
@@ -258,7 +258,8 @@ function calculate_score() {
     loan_amount_point;
 
   document.getElementById("creditScore").value = total;
-
+  console.log("total");
+  console.log(total);
   // var myDiv = document.getElementById("recommend");
   // myDiv.setAttribute("type", "hidden");
 }
@@ -285,6 +286,7 @@ function recommend() {
   if (score < 600) {
     //loan term reduction
     if (numberOfMonths == 24) {
+      numberOfMonths = 12;
       str += "<br><p>Reduce loan term to 12 months.</p>";
       score += 36;
     }
@@ -296,12 +298,15 @@ function recommend() {
       var monthly_debt = 0;
       var increase  = 0;
 
-      if (dti_point != 0 && monthly_inc !=0) {
+      if (dti_point != 0 && monthly_inc != 0) {
           if (dti_point >= 13 && dti_point < 21) {
             var dti_point = 12;
-            var monthly_debt = (dti_point/100) * (monthly_inc);
+            monthly_debt = (dti_point/100) * (monthly_inc);
             str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"; 
             score += 14
+
+            console.log("before increase")
+            console.log(score)
 
             if (monthlyCreditLimit != 0 && monthly_debt != 0) {
                 let util_rate = (monthly_debt/monthlyCreditLimit) * 100
@@ -309,6 +314,9 @@ function recommend() {
                 increase = point - util_point
                 
                 score += increase
+                console.log("after increase")
+                console.log(score)
+                console.log(increase);
             }
           }
           else if (dti_point >= 21 && dti_point < 26.0) {
@@ -316,13 +324,20 @@ function recommend() {
             monthly_debt = (dti_point/100) * (monthly_inc)
             str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
             score += 12
-            
+
+            console.log("before increase")
+            console.log(score)
+
             if (monthlyCreditLimit != 0 && monthly_debt != 0) {
                 let util_rate = (monthly_debt/monthlyCreditLimit) * 100
                 let point = calc_util_point(util_rate)
                 increase = point - util_point
                 
                 score += increase
+
+                console.log("after increase")
+                console.log(score)
+                console.log(increase);
             }
           }
           else if (dti_point >= 26 && dti_point < 30) {
@@ -330,6 +345,8 @@ function recommend() {
               monthly_debt = (dti_point/100) * (monthly_inc)
               str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
               score += 8
+              console.log("before increase")
+              console.log(score)
               
               if (monthlyCreditLimit != 0 && monthly_debt != 0) {
                   let util_rate = (monthly_debt/monthlyCreditLimit) * 100
@@ -337,6 +354,9 @@ function recommend() {
                   increase = point - util_point
                   
                   score += increase
+                  console.log("after increase")
+                  console.log(score)
+                  console.log(increase);
               }
           }
           else if (dti_point >= 30 && dti_point < 100) {
@@ -344,6 +364,8 @@ function recommend() {
               monthly_debt = (dti_point/100) * (monthly_inc)
               str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
               score += 11
+              console.log("before increase")
+              console.log(score)
               
               if (monthlyCreditLimit != 0 && monthly_debt != 0) {
                   let util_rate = (monthly_debt/monthlyCreditLimit) * 100
@@ -351,6 +373,9 @@ function recommend() {
                   increase = point - util_point
                   
                   score += increase
+                  console.log("after increase")
+                  console.log(score)
+                  console.log(increase);
               }
           }
           monthly_debt = parseFloat(monthly_debt)
