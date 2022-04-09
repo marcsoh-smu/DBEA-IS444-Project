@@ -108,11 +108,11 @@ function get_dti() {
   var current_dti = 0;
   if (monthly_inc == 0 && monthlyDebt != 0) {
     current_dti = 0;
-    return current_dti * 100;
   } else if (monthlyDebt != 0) {
     current_dti = monthlyDebt / monthly_inc;
-    return current_dti * 100;
+    // return current_dti * 100;
   }
+  return current_dti * 100;
 }
 
 //CALCULATE Debt to Income points
@@ -145,14 +145,15 @@ function get_util_rate() {
     document.getElementById("monthlyCreditLimit").value
   );
 
-  util_rate = 0;
+  var util_rate = 0;
   if (monthlyCreditLimit == 0 && monthlyDebt != 0) {
-    var util_rate = 0;
-    return util_rate * 100;
+    util_rate = 0;
+    // return util_rate * 100;
   } else if (monthlyDebt != 0) {
     util_rate = monthlyDebt / monthlyCreditLimit;
-    return util_rate * 100;
+    // return util_rate * 100;
   }
+  return util_rate * 100;
 }
 // Utilization points
 function calc_util_point() {
