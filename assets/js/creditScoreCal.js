@@ -343,6 +343,7 @@ function recommend() {
                 increase = point - util_point
                 
                 score += increase
+                
                 console.log("monthly_debt")
                 console.log(monthly_debt)
                 console.log("monthlyCreditLimit")
