@@ -328,7 +328,7 @@ function recommend() {
           else if (dti_point >= 21 && dti_point < 26.0) {
             dti_point = 20.0
             monthly_debt = (dti_point/100) * (monthly_inc)
-            str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
+            str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt.toFixed(2)))+ ".</p>"
             score += 12
             console.log("checking B, 12")
             console.log("before increase")
