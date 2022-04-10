@@ -2,18 +2,9 @@ function retrieve() {
   changeNavBar();
   retrieveUsername();
   retrieveEmail();
-  retrieveCreditscore();
-  retrieveInterestrate();
   retrieveTbankacc();
   retrieveTbankid();
   retrieveTbankpin();
-  retrieveAnnualincome();
-  retrieveHomeownership();
-  retrieveMonthlydebt();
-  retrieveMonthlycreditlimit();
-  retrieveMortacc();
-  retrieveLoanamount();
-  retrieveNumberofmonths();
 }
 
 function retrieveUsername() {
@@ -301,15 +292,6 @@ function setUpProfile() {
   var tBankAcc = document.getElementById("tBankAcc").value;
   var tBankID = document.getElementById("tBankID").value;
   var tBankPIN = document.getElementById("tBankPIN").value;
-  var creditScore = document.getElementById("creditScore").value;
-  var interestRate = document.getElementById("interestRate").value;
-  var annualIncome = document.getElementById("annualIncome").value;
-  var homeOwnership = document.getElementById("homeOwnership").value;
-  var monthlyDebt = document.getElementById("monthlyDebt").value;
-  var monthlyCreditLimit = document.getElementById("monthlyCreditLimit").value;
-  var mortAcc = document.getElementById("mortAcc").value;
-  var loanAmount = document.getElementById("loanAmount").value;
-  var numberOfMonths = document.getElementById("numberOfMonths").value;
 
   var details =
     "username=" +
@@ -321,25 +303,7 @@ function setUpProfile() {
     "&tBankID=" +
     tBankID +
     "&tBankPIN=" +
-    tBankPIN +
-    "&creditScore=" +
-    creditScore +
-    "&interestRate=" +
-    interestRate +
-    "&annualIncome=" +
-    annualIncome +
-    "&homeOwnership=" +
-    homeOwnership +
-    "&monthlyDebt=" +
-    monthlyDebt +
-    "&monthlyCreditLimit=" +
-    monthlyCreditLimit +
-    "&mortAcc=" +
-    mortAcc +
-    "&loanAmount=" +
-    loanAmount +
-    "&numberOfMonths=" +
-    numberOfMonths;
+    tBankPIN;
   var url = "backendProcess/setUpProfile.php?" + details;
 
   request.onreadystatechange = function () {
