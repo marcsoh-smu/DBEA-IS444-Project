@@ -213,7 +213,7 @@ function apply_loan_btn() {
     myDiv.setAttribute("type", "hidden");
     myDiv.innerHTML = "<p>Sorry, you are not eligible for loan.</p>";
     
-    var str = `<input type="button" value="recommend" onclick="recommend();"/>`;
+    var str = `<div class = "col"><input type="button" class="btn btn-primary" value="recommend" onclick="recommend();"/></div>`;
     recommend.innerHTML = str;
   }
 }
@@ -328,7 +328,10 @@ function recommend() {
           else if (dti_point >= 21 && dti_point < 26.0) {
             dti_point = 20.0
             monthly_debt = (dti_point/100) * (monthly_inc)
-            str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt.toFixed(2)))+ ".</p>"
+            str += "<div class='col'<p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt.toFixed(0)))+ ".<br>"
+            //hard coded here
+            str += ("Credit score: 612 (after reduction in monthly debt obligations)</p></div>");
+
             score += 12
             console.log("checking B, 12")
             console.log("before increase")
@@ -362,7 +365,7 @@ function recommend() {
           else if (dti_point >= 26 && dti_point < 30) {
               dti_point = 25.0
               monthly_debt = (dti_point/100) * (monthly_inc)
-              str += "<br><p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p>"
+              str += "<p>Reduce monthly debt obligations to " + String(parseFloat(monthly_debt))+ ".</p> "
               score += 8
               console.log("checking c, 8")
               // console.log("before increase")
