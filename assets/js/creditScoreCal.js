@@ -231,6 +231,7 @@ function calculate_score() {
   var loan_amount_point = calc_loan_amount_point(loanAmount);
   // console.log("loan_amount_point")
   // console.log(loan_amount_point)
+  // console.log(loanAmount)
   //interest default 6% 138points
   // var int_rate_point = calc_int_rate_point(interestRate);
   // console.log("int_rate_point")
@@ -241,11 +242,11 @@ function calculate_score() {
   // console.log(term_point)
 
   var dti_point = calc_dti_point();
-  console.log("dti_point")
-  console.log(dti_point)
+  // console.log("dti_point")
+  // console.log(dti_point)
   var util_point = calc_util_point();
-  console.log("util_point")
-  console.log(util_point)
+  // console.log("util_point")
+  // console.log(util_point)
 
   var total =
     annual_inc_point +
@@ -258,8 +259,8 @@ function calculate_score() {
     loan_amount_point;
 
   document.getElementById("creditScore").value = total;
-  console.log("total");
-  console.log(total);
+  // console.log("total");
+  // console.log(total);
   // var myDiv = document.getElementById("recommend");
   // myDiv.setAttribute("type", "hidden");
 }
