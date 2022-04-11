@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Buy Furniture Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/Shopify/shop.css" />
+    <script src='main.js'></script>
+    
+</head>
+<style>
+
+.navbar {
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+}
+
+.navbar .nav-item a:hover {
+  color:teal !important;
+  font-weight: 500;
+}
+
+footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 65px;
+    
+        }
+
+.logo-image{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin-top: -6px;
+}
+footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            width: 100%;
+            /* Height of the footer*/ 
+            height: 65px;
+    
+        }
+</style>
+
+ <!--Nav bar-->
+ <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: white;">
+  <div class="container">
+      <a class="navbar-brand text-danger" href="Index.html">
+          <img src="img/alan logo.png" width="70" alt="logo" class="img-fluid">
+          <span class="font-weight-bold text-dark">Alan's</span>Furniture
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <a class="nav-link pl-3" href="Index.html#product_container">Product Catalogue
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                  <a class="nav-link pl-3" href="#">NarBank Collab</a>
+              </li>
+
+              
+          </ul>
+          <a class="navbar-brand" href="./shoppingbag.html">
+              <div class="logo-image">
+                    <img src="./img/shopping-cart.png" class="img-fluid">
+              </div>
+        </a>
+      </div>
+  </div>
+</nav>
+
+<body>
+
+
+     <div class="card border-light mb-3 text-center">
+        <img class="card-img" src="./img/homepage.jpeg"
+            style="height:100%; object-fit: cover;">
+        <div class="card-img-overlay">
+            <h1 style="color:black;opacity:1; margin-top: 250px; font-size: 80px;">Keep Calm and Build with Love
+            </h1>
+            <h3 style="margin:30px;color:rgb(5, 5, 5);">We aim to bring the world's most sought after artistic touch into your home!</h3>
+            <a class="btn btn-dark" href="#form_container"
+                style="position: center; cursor: pointer; margin-top: 20px;">Shop Now
+            </a>
+        </div>
+    </div>
+
+    <div class="container" id="form_container">
+        <!-- <div class="single-heading">
+            <h1 p style="text-align:center; margin-top: 10px;">Our Products</h1>
+        </div> -->
+        <h1 p style="text-align:center; margin-top: 50px;">Our Products</h1>
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <p style="text-align:center;">Buy the following products and pay with NarBank</p>
+            </div>
+        </div>
+  
+    
+          <div class="album py-5">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                  <div class="card shadow-sm mb-5">
+                      <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="./img/bed1.png"/>
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's Faux Leather Storage Divan</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='product1.html#bed1';">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/bed2.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's Pine Bunk Bed (Single, Grey)</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='product2.html';">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm mb-5">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/chair1.png"/>
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's Lounge Sofa Bed</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col">
+                  <div class="card shadow-sm mb-5">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/sofa.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan 4 Seater Sofa</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/sofa2.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan 4 Seater Sofa With Ottoman</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/Sofa3.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's Teal Green 2 Seater Sofa</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="col">
+                  <div class="card shadow-sm mb-4">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/Sofa4.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's Grey L Shape Sofa</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/dt1.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's 8 Seater Dining Table</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='diningtable.html';">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="img/dt2.png"/>
+        
+                    <div class="card-body">
+                      <p class="card-text"><b>Alan's 4 Seater Dining Table</b></p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View Product</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+    </div>
+    
+
+          
+</body>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3">
+    © 2022 Copyright:
+    <a class="text-dark" href="./Index.html">Alan's Furniture</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</html>
