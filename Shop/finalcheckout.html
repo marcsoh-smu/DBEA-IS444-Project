@@ -260,7 +260,7 @@ fieldset {
 <!--Nav bar-->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: white;">
     <div class="container">
-        <a class="navbar-brand text-danger" href="Index2.html">
+        <a class="navbar-brand text-danger" href="Index.html">
             <img src="img/alan logo.png" width="70" alt="logo" class="img-fluid">
             <span class="font-weight-bold text-dark">Alan's</span>Furniture
         </a>
@@ -273,7 +273,7 @@ fieldset {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link pl-3" href="Index2.html#form_container">Product Catalogue
+                    <a class="nav-link pl-3" href="Index.html#form_container">Product Catalogue
                     </a>
                 </li>
 
@@ -296,7 +296,7 @@ fieldset {
 
     <!--Main Content-->
     <div class="card">
-        <div class="card-top border-bottom text-center"> <a href="Index2.html#form_container"> Back to shop</a> <span id="logo">Alan's Furniture</span> </div>
+        <div class="card-top border-bottom text-center"> <a href="Index.html#form_container"> Back to shop</a> <span id="logo">Alan's Furniture</span> </div>
         <div class="card-body">
             <div class="row upper">
                 <span>
@@ -353,7 +353,7 @@ fieldset {
                                     <input type="password" class="form-control" name="tBankPIN" id="tBankPIN" value="">
                                     <!--allow user to change this, put the original value in the field-->
                                 </div>
-                                <button class="btn" id="narbankorder" onclick="payNar()">Place order</button>
+                                <button class="btn" id="narbankorder" onclick="payNar()" data-toggle="modal" data-target="#exampleModalCenter">Place order</button>
 
                             </form>
                         </div>
@@ -427,7 +427,7 @@ fieldset {
     <!-- Copyright -->
     <div class="text-center p-3">
       © 2022 Copyright:
-      <a class="text-dark" href="./Index2.html">Alan's Furniture</a>
+      <a class="text-dark" href="./Index.html">Alan's Furniture</a>
     </div>
     <!-- Copyright -->
   </footer>
@@ -463,7 +463,9 @@ var ApiURL = "http://tbankonline.com/SMUtBank_API/Gateway";
             return ApiURL;
         }
 
-        function payNar() {
+        function Custom() {
+            tier1 = 600;
+            tier2 = 1200;
             price = 6662.69;
             choiceArray = [2,4,1];
             choice = 1;
@@ -478,6 +480,14 @@ var ApiURL = "http://tbankonline.com/SMUtBank_API/Gateway";
             var transactionReferenceNumber = tBankAcc+to;
             var narrative = "This is a " + choiceArray[choice] + "months loan";
 
+            //onload() CREATE BUTTON/DROPDOWN LIST
+            if (creditScore <= tier1) {
+             //2
+            } else if (creditScore <= tier2) {
+             // 2, 4
+            } else {
+             // 2, 4 , 6
+            }
             var serviceName = "creditTransfer";
             var headerObj = {
                     Header: {
