@@ -253,30 +253,21 @@
         }
 
         function Custom() {
-            tier1 = 600;
-            tier2 = 1200;
-            price = 899;
+            price = 6662.69;
             choiceArray = [2,4,6];
             choice = 1;
-            to = 8646;
+            to = 8610;
             var username = document.getElementById("Username").value;
             var email = document.getElementById("email").value;
             var tBankAcc = document.getElementById("tBankAcc").value;
             var tBankID = document.getElementById("tBankID").value;
             var tBankPIN = document.getElementById("tBankPIN").value;
-            var creditScore = document.getElementById("creditScore").value;
+            //var creditScore = document.getElementById("creditScore").value;
             var transactionAmount = price / choiceArray[choice];
             var transactionReferenceNumber = tBankAcc+to;
-            var narrative = "This is a " + choiceArray[choice] + "months loan";
+            var narrative = "This is a " + choiceArray[choice] + " months interest free loan";
 
-            //onload() CREATE BUTTON/DROPDOWN LIST
-            if (creditScore <= tier1) {
-             //2
-            } else if (creditScore <= tier2) {
-             // 2, 4
-            } else {
-             // 2, 4 , 6
-            }
+            
             var serviceName = "creditTransfer";
             var headerObj = {
                     Header: {
