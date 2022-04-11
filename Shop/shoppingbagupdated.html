@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Buy Furniture Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <script src='main.js'></script>
+  </head>
+
+  <style>
+    .navbar {
+      padding-top: 1.5px;
+      padding-bottom: 1.5px;
+    }
+
+    .navbar .nav-item a:hover {
+      color: teal !important;
+      font-weight: 500;
+    }
+
+    body {
+      padding-top: 160px;
+    }
+
+    footer {
+      position: fixed;
+      padding: 10px 10px 0px 10px;
+      bottom: 0;
+      width: 100%;
+      /* Height of the footer*/
+      height: 65px;
+
+
+    }
+
+    .logo-image {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      margin-top: -6px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(219, 240, 239);
+      font-size: 0.8rem
+    }
+
+    .card {
+      max-width: 1000px;
+      margin: 2vh
+    }
+
+    .card-top {
+      padding: 0.7rem 5rem
+    }
+
+    .card-top a {
+      float: left;
+      margin-top: 0.7rem
+    }
+
+    #logo {
+      font-family: 'Dancing Script';
+      font-weight: bold;
+      font-size: 1.6rem
+    }
+
+    .card-body {
+      padding: 0 5rem 5rem 5rem;
+      background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+      background-size: cover;
+      background-repeat: no-repeat
+    }
+
+    @media(max-width:768px) {
+      .card-body {
+        padding: 0 1rem 1rem 1rem;
+        background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+        background-size: cover;
+        background-repeat: no-repeat
+      }
+
+      .card-top {
+        padding: 0.7rem 1rem
+      }
+    }
+
+    .row {
+      margin: 0
+    }
+
+    .upper {
+      padding: 1rem 0;
+      justify-content: space-evenly
+    }
+
+    #two {
+      border-radius: 1rem;
+      width: 22px;
+      height: 22px;
+      margin-right: 3px;
+      border: 1px solid blue;
+      text-align: center;
+      display: inline-block
+    }
+
+
+    .icons {
+      margin-left: auto
+    }
+
+    form span {
+      color: rgb(179, 179, 179)
+    }
+
+    form {
+      padding: 2vh 0
+    }
+
+    input {
+      border: 1px solid rgba(0, 0, 0, 0.137);
+      padding: 1vh;
+      margin-bottom: 4vh;
+      outline: none;
+      width: 100%;
+      background-color: rgb(247, 247, 247)
+    }
+
+    input:focus::-webkit-input-placeholder {
+      color: transparent
+    }
+
+    .header {
+      font-size: 1.5rem
+    }
+
+    .left {
+      background-color: #ffffff;
+      padding: 2vh
+    }
+
+    .left img {
+      width: 2rem
+    }
+
+    .left .col-4 {
+      padding-left: 0
+    }
+
+    .right .item {
+      padding: 0.3rem 0
+    }
+
+    .right {
+      background-color: #ffffff;
+      padding: 2vh
+    }
+
+    .col-8 {
+      padding: 0 1vh
+    }
+
+    .lower {
+      line-height: 2
+    }
+
+    .btn {
+      background-color: rgb(23, 4, 189);
+      border-color: rgb(23, 4, 189);
+      color: white;
+      width: 100%;
+      font-size: 0.7rem;
+      margin: 4vh 0 1.5vh 0;
+      padding: 1.5vh;
+      border-radius: 0
+    }
+
+    .btn:focus {
+      box-shadow: none;
+      outline: none;
+      box-shadow: none;
+      color: white;
+      -webkit-box-shadow: none;
+      -webkit-user-select: none;
+      transition: none
+    }
+
+    .btn:hover {
+      color: white
+    }
+
+    a {
+      color: black
+    }
+
+    a:hover {
+      color: black;
+      text-decoration: none
+    }
+
+    input[type=checkbox] {
+      width: unset;
+      margin-bottom: unset
+    }
+
+    #cvv {
+      background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
+      background-repeat: no-repeat;
+      background-position-x: 95%;
+      background-position-y: center
+    }
+
+    .shopping-cart {
+      width: 750px;
+      height: 423px;
+      margin: 80px auto;
+      background: #FFFFFF;
+      box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
+      border-radius: 6px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title {
+      height: 60px;
+      border-bottom: 1px solid #E1E8EE;
+      padding: 20px 30px;
+      color: #5E6977;
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .item {
+      padding: 20px 30px;
+      height: 120px;
+      display: flex;
+    }
+
+    .item:nth-child(3) {
+      border-top: 1px solid #E1E8EE;
+      border-bottom: 1px solid #E1E8EE;
+    }
+
+    .buttons {
+      position: relative;
+      padding-top: 30px;
+      margin-right: 60px;
+    }
+
+    .delete-btn,
+    .like-btn {
+      display: inline-block;
+      Cursor: pointer;
+    }
+
+    .delete-btn {
+      width: 18px;
+      height: 17px;
+      background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
+    }
+
+    .like-btn {
+      position: absolute;
+      top: 9px;
+      left: 15px;
+      background: url('twitter-heart.png');
+      width: 60px;
+      height: 60px;
+      background-size: 2900%;
+      background-repeat: no-repeat;
+    }
+
+    .is-active {
+      animation-name: animate;
+      animation-duration: .8s;
+      animation-iteration-count: 1;
+      animation-timing-function: steps(28);
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes animate {
+      0% {
+        background-position: left;
+      }
+
+      50% {
+        background-position: right;
+      }
+
+      100% {
+        background-position: right;
+      }
+    }
+
+    .image {
+      margin-right: 50px;
+    }
+
+    .description {
+      margin-left: 20px;
+      padding-top: 10px;
+      margin-right: 60px;
+      width: 115px;
+    }
+
+    .description span {
+      display: block;
+      font-size: 14px;
+      color: #000000;
+      font-weight: 400;
+    }
+
+    .description span:first-child {
+      margin-bottom: 5px;
+    }
+
+    .description span:last-child {
+      font-weight: 300;
+      margin-top: 8px;
+      color: #000000;
+    }
+
+    .quantity {
+      padding-top: 20px;
+      margin-right: 60px;
+    }
+
+    .quantity input {
+      -webkit-appearance: none;
+      border: none;
+      text-align: center;
+      width: 32px;
+      font-size: 16px;
+      color: #43484D;
+      font-weight: 300;
+    }
+
+    button[class*=btn] {
+      width: 30px;
+      height: 30px;
+      background-color: #E1E8EE;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .minus-btn img {
+        margin-top: 2px;
+      height: 10px
+    
+    }
+
+    .plus-btn img {
+      margin-top: 2px;
+      height: 10px
+    }
+
+    button:focus,
+    input:focus {
+      outline: 0;
+    }
+
+    .total-price {
+      width: 83px;
+      padding-top: 27px;
+      text-align: center;
+      font-size: 16px;
+      color: #43484D;
+      font-weight: 300;
+    }
+
+    @media (max-width: 800px) {
+      .shopping-cart {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .item {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .image img {
+        width: 50%;
+      }
+
+      .image,
+      .quantity,
+      .description {
+        width: 100%;
+        text-align: center;
+        margin: 6px 0;
+      }
+
+      .buttons {
+        margin-right: 20px;
+      }
+    }
+  </style>
+  <!--Nav bar-->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: white;">
+    <div class="container">
+      <a class="navbar-brand text-danger" href="Index.html">
+        <img src="img/alan logo.png" width="70" alt="logo" class="img-fluid">
+        <span class="font-weight-bold text-dark">Alan's</span>Furniture
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="Index.html#form_container">Product Catalogue
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link pl-3" href="#">NarBank Collab</a>
+          </li>
+
+
+        </ul>
+        <a class="navbar-brand" href="#">
+          <div class="logo-image">
+            <img src="./img/shopping-cart.png" class="img-fluid">
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+<body>
+
+
+  <!--Main Content-->
+  <div class="card">
+    <div class="card-top border-bottom text-center"> <a href="Index.html#form_container"> Back to shop</a> <span
+        id="logo">Shopping Cart</span> </div>
+    <div class="card-body">
+      <div class="shopping-cart">
+        <!-- Title -->
+        <div class="title">
+          Shopping Bag
+        </div>
+
+        <!-- ADDED THIS WHOLE PART Product #1 --> 
+        <div class="item">
+
+          <div class="image-fluid">
+            <img src="./img/bed1.png" width="100px" alt="" />
+          </div>
+
+          <div class="description">
+            <span id = 'new_product'></span>
+          </div>
+          <script>
+            document.getElementById('new_product').innerHTML=localStorage.getItem("name");
+            console.log(localStorage.getItem("name"));
+          </script>
+
+          <div class="quantity">
+            <button class="plus-btn" type="button" name="button" id="increaseqty" onclick="plus_function1() , increaseqty()">
+              <img src="./img/add.png" alt="" />
+            </button>
+            <input id= "p1" type="text" name="name" value="1">
+            <button class="minus-btn" type="button" name="button" onclick="minus_function1(),decreaseprice()">
+              <img src="./img/minus-sign.png" alt="" />
+            </button>
+          </div>
+
+          <div class="total-price" id="new_price">
+          </div>
+
+          <script>
+            document.getElementById('new_price').innerHTML=localStorage.getItem("price");
+          </script>
+        </div>
+
+      <!-- New product 2
+      <div class="item">
+        <div class="image-fluid">
+          <img src="./img/dt1.png" width="100px" alt="" />
+        </div>
+
+        <div class="description">
+          <span id = 'new_product2'></span>
+        </div>
+        <script>
+          document.getElementById('new_product2').innerHTML=localStorage.getItem("name2");
+          console.log(localStorage.getItem("name2"));
+        </script>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button" onclick="plus_function1()">
+            <img src="./img/add.png" alt="" />
+          </button>
+          <input id= "p1" type="text" name="name" value="1">
+          <button class="minus-btn" type="button" name="button" onclick="minus_function1()">
+            <img src="./img/minus-sign.png" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price" id="new_price2"></div>
+
+        <script>
+          document.getElementById('new_price2').innerHTML=localStorage.getItem("price2");
+        </script>
+      </div> -->
+
+
+        <div class="hero-button text-center">
+          <a href="newcheckout.html" class="btn btn-large btn-danger" onclick="passvaluetopay()">
+            <i class="icon-apple icon-3x pull-left"></i>
+            <span>Make Payment</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+
+
+      // for product 1
+      function plus_function1(){
+        var x = document.getElementById("p1").value;
+        var value = parseInt(x)
+        if (value != 100) {
+          value = value + 1;
+        } else {
+          value = 100;
+        }
+        document.getElementById("p1").value = value;
+      }
+
+    // increase price 
+    function increaseqty(){
+      var a =   1880.90
+      var qty=  document.getElementById("p1").value
+      var newvalue = a*qty
+      var valuedp = newvalue.toFixed(2);
+      console.log(newvalue)
+      document.getElementById('new_price').innerHTML= "$" + valuedp
+      
+
+    }
+
+  
+
+    function minus_function1(){
+        var x = document.getElementById("p1").value;
+        var value = parseInt(x)
+        if (value > 0) {
+          value = value - 1;
+        } else {
+          value = 0;
+        }
+        document.getElementById("p1").value = value;
+    }
+
+    function decreaseprice(){
+      var a =   1880.90
+      var qty=  document.getElementById("p1").value
+      var newvalue = a*qty
+      var valuedp = newvalue.toFixed(2);
+      console.log(newvalue)
+      document.getElementById('new_price').innerHTML= "$" + valuedp
+      
+
+    }
+
+    // for product 2
+    function plus_function2(){
+        var x = document.getElementById("p2").value;
+        var value = parseInt(x)
+        if (value != 100) {
+          value = value + 1;
+        } else {
+          value = 100;
+        }
+        document.getElementById("p2").value = value;
+    }
+
+    function minus_function2(){
+        var x = document.getElementById("p2").value;
+        var value = parseInt(x)
+        if (value > 0) {
+          value = value - 1;
+        } else {
+          value = 0;
+        }
+        document.getElementById("p2").value = value;
+    }
+
+
+    // for product 
+    function plus_function3(){
+        var x = document.getElementById("p3").value;
+        var value = parseInt(x)
+        if (value != 100) {
+          value = value + 1;
+        } else {
+          value = 100;
+        }
+        document.getElementById("p3").value = value;
+    }
+
+    function minus_function3(){
+        var x = document.getElementById("p3").value;
+        var value = parseInt(x)
+        if (value > 0) {
+          value = value - 1;
+        } else {
+          value = 0;
+        }
+        document.getElementById("p3").value = value;
+    }
+
+    //  added here
+    function passvaluetopay() {
+            var name = document.getElementById('product_name').innerHTML
+            var price = document.getElementById('new_price').innerHTML
+            localStorage.setItem("payname", name)
+            localStorage.setItem("payprice", price)
+            
+
+            document.location.href = 'newcheckout.html';
+        }
+
+    </script>
+</body>
+
+</html>

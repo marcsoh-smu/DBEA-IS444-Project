@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Buy Furniture Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/Shopify/shop.css" />
+    <script src='main.js'></script>
+</head>
+
+<style>
+    .navbar {
+      padding-top: 1.5px;
+      padding-bottom: 1.5px;
+    }
+    
+    .navbar .nav-item a:hover {
+      color:teal !important;
+      font-weight: 500;
+    }
+    body {
+      padding-top: 160px;
+    }
+    
+    footer {
+                position: fixed;
+                padding: 10px 10px 0px 10px;
+                bottom: 0;
+                width: 100%;
+                /* Height of the footer*/ 
+                height: 65px;
+                
+        
+            }
+    
+    .logo-image{
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        margin-top: -6px;
+    }
+
+    body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(219, 240, 239);
+    font-size: 0.8rem
+}
+
+.card {
+    max-width: 1000px;
+    margin: 2vh
+}
+
+.card-top {
+    padding: 0.7rem 5rem
+}
+
+.card-top a {
+    float: left;
+    margin-top: 0.7rem
+}
+
+#logo {
+    font-family: 'Dancing Script';
+    font-weight: bold;
+    font-size: 1.6rem
+}
+
+.card-body {
+    background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+    background-size: cover;
+    background-repeat: no-repeat
+}
+
+@media(max-width:768px) {
+    .card-body {
+        padding: 0 1rem 1rem 1rem;
+        background-image: url("https://i.imgur.com/4bg1e6u.jpg");
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+
+    .card-top {
+        padding: 0.7rem 1rem
+    }
+}
+
+.row {
+    margin: 0
+}
+
+.upper {
+    padding: 1rem 0;
+    justify-content: space-evenly
+}
+
+#three {
+    border-radius: 1rem;
+    width: 22px;
+    height: 22px;
+    margin-right: 3px;
+    border: 1px solid blue;
+    text-align: center;
+    display: inline-block
+}
+
+#payment {
+    margin: 0;
+    color: blue
+}
+
+
+
+form span {
+    color: rgb(179, 179, 179)
+}
+
+form {
+    padding: 2vh 0
+}
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+.header {
+    font-size: 1.5rem
+}
+
+.left {
+    background-color: #ffffff;
+    padding: 2vh
+}
+
+.left img {
+    width: 2rem
+}
+
+.left .col-4 {
+    padding-left: 0
+}
+
+.right .item {
+    padding: 0.3rem 0
+}
+
+.right {
+    background-color: #ffffff;
+    padding: 2vh
+}
+
+.col-8 {
+    padding: 0 1vh
+}
+
+.lower {
+    line-height: 2
+}
+.button1 {font-size: 10px;}
+
+.btn {
+    background-color: rgb(23, 4, 189);
+    border-color: rgb(23, 4, 189);
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin: 4vh 0 1.5vh 0;
+    padding: 1.5vh;
+    border-radius: 0
+}
+
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+
+.btn:hover {
+    color: white
+}
+
+
+a:hover {
+    color: black;
+    text-decoration: none
+}
+
+input[type=checkbox] {
+    width: unset;
+    margin-bottom: unset
+}
+
+#cvv {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.575), rgba(255, 255, 255, 0.541)), url("https://img.icons8.com/material-outlined/24/000000/help.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+}
+
+#cvv:hover {}
+
+fieldset {
+      overflow: hidden
+    }
+    
+    .some-class {
+      float: left;
+      clear: none;
+    }
+    
+    label {
+      float: left;
+      clear: none;
+      display: block;
+      padding: 0px 1em 0px 8px;
+    }
+    
+    input[type=radio],
+    input.radio {
+      float: left;
+      clear: none;
+      margin: 2px 0 0 2px;
+    }
+</style>
+<!--Nav bar-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: white;">
+    <div class="container">
+        <a class="navbar-brand text-danger" href="Index.html">
+            <img src="img/alan logo.png" width="70" alt="logo" class="img-fluid">
+            <span class="font-weight-bold text-dark">Alan's</span>Furniture
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="Index.html#form_container">Product Catalogue
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link pl-3" href="#">NarBank Collab</a>
+                </li>
+
+                
+            </ul>
+            <a class="navbar-brand" href="./shoppingbagempty.html">
+                <div class="logo-image">
+                      <img src="./img/shopping-cart.png" class="img-fluid">
+                </div>
+          </a>
+        </div>
+    </div>
+</nav>
+<body>
+    
+
+    <!--Main Content-->
+    <div>
+           <h1 style="text-align:center">Thank you for buying with Alan's Furniture</h1>
+           <h2 style="text-align: center;">Your order has been processed</h2>
+           <!-- <img src="img/alan logo.png" width="170" style=" display: block;margin: 0 auto;"> -->
+            <link><h5 style="text-align: center;margin-top: 20px;"><a href="Index.html"><u>Back to Alan's Furniture</u></a></link>
+           </h5>
+           <div class="header">Order Summary</div>
+                        <p>3 item</p>
+                        <div class="row item">
+                            <div class="col-4 align-self-center"><img class="img-fluid" style="width:100px" src="./img/bed1.png"></div>
+                            <div class="col-8">
+                                <div class="total-price" id="new_price">
+                                </div>
+                      
+                                <script>
+                                  document.getElementById('new_price').innerHTML=localStorage.getItem("price");
+                    
+                                </script>
+                                <div class="description">
+                                    <span id = 'new_product'></span>
+                                  </div>
+                                  <script>
+                                    document.getElementById('new_product').innerHTML=localStorage.getItem("name");
+                                    console.log(localStorage.getItem("name"));
+                                  </script>
+                                <div class="row">Qty:3</div>
+                            </div>
+                            
+                        </div>
+                        <div class="row item">
+                            <div class="col-4 align-self-center"><img class="img-fluid"  style="width:100px" src="./img/dt1.png"></div>
+                            <div class="col-8">
+                                <div class="row">$ 1019.99</div>
+                                <div class="row text-muted">Alan's 8 Seater Dining Table</div>
+                                <div class="row">Qty:1</div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row lower">
+                            <div class="col text-left">Subtotal</div>
+                            <div class="col text-right">$ 6662.69</div>
+                        </div>
+                        <div class="row lower">
+                            <div class="col text-left">Delivery</div>
+                            <div class="col text-right">Free</div>
+                        </div>
+                        <div class="row lower">
+                            <div class="col text-left"><b>Total to pay</b></div>
+                            <div class="col text-right"><b>$ 6662.69</b></div>
+                            <button class="btn" id="bill">View Bill Transaction</button>
+                        </div>
+                        
+                   
+          
+            <script type="text/javascript">
+             document.getElementById("bill").onclick = function () {
+             document.location.href = 'newcheckout.html';
+            };
+            </script>
+    </div>
+
+  
+    
+</body>
+<footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-2">
+      © 2022 Copyright:
+      <a class="text-dark" href="./Index.html">Alan's Furniture</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+<script>
+    
+
+ 
+</script>
+</html>
