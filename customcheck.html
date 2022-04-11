@@ -1,0 +1,397 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>NarBank - Checkout</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/narwhal_logo_icon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/hamburgers.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .contain{
+            background-color:white;
+            border:2px solid #23819d;
+        }
+        .mainForm{
+            background-color:white;
+            padding-top: 10px;
+            padding-bottom:30px;
+        }
+        #signup{
+            color:blue;
+            text-decoration:underline;
+        }
+        .checkoutsetup{
+            color:#23819d;
+            font-size:30px;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        body{
+            background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url(assets/img/gallery/profile.jpg);
+        }
+        .head{
+            background-color:white;
+        }
+        .setUpButton{
+            margin-bottom:20px;
+        }
+        .main-header{
+            background: white;
+        }
+    </style>
+</head>
+<body onload="retrieve()">
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="home.html">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <h2>NarBank</h2>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <img src="assets/img/logo/narwhal_logo.png" width = 80% height = 80% alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">                                                                                        
+                                                <li><a href="home.html">Home</a></li>
+                                                <li><a href="creditScore.html">My Credit Score</a>
+                                                    <!-- <ul class="submenu">
+                                                        <li><a href="recipeSearch.html">Recipe</a></li>
+                                                        <li><a href="supermarketSearch.html">Supermarket</a></li>
+                                                    </ul> -->
+                                                </li>
+                                                <li class="optionalMealPrep" id=""><a href="">My Bills</a></li>
+                                                <li><a href="#">Shop Now</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="https://buyandbuildwithalan.company.site/?lang=en&from_admin&vertical=home">Buy and Build with Alan</a></li>
+                                                        <li><a href="">Zara</a></li>
+                                                        <li><a href="">Charles & Keith</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="optionalLogin" id=""><a href="login.html">Log In/Sign Up</a>
+                                                </li>
+                                                <li class="optionalLogout" id="" onclick="logout()"><a href="#">Log
+                                                        Out</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Header-btn -->
+                                    <div class="header-right-btn d-none d-lg-block ml-40">
+                                        <a href="profile.html" class="btn optionalProfile" id="">My Profile</a>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6 contain">
+                    <p class="checkoutsetup">Input Your Tbank Details</p>
+                    <form>
+                        <div class="form-group">
+                            <label for="Username">Username</label>
+                            <input type="text" class="form-control" name="Username" id="Username" value="" disabled>
+                            <!--There are only two ways to access this page, after logged in/after sign up-->
+                            <!--Regardless of whether acc is logged in, disable this field with the user's username -->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" name="email" id="email" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tBankAcc">tBank Account</label>
+                            <input type="text" class="form-control" name="tBankAcc" id="tBankAcc" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tBankID">tBank ID</label>
+                            <input type="text" class="form-control" name="tBankID" id="tBankID" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tBankPIN">tBank PIN</label>
+                            <input type="password" class="form-control" name="tBankPIN" id="tBankPIN" value="">
+                            <!--allow user to change this, put the original value in the field-->
+                        </div>
+                        <div class="setUpButton">
+                            <a type="button" class="btn btn-danger" data-toggle="modal">2Months</a>
+                            <a type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">4Months</a>
+                        </div>
+                        
+                        <div class="setUpButton">
+                            <a type="button" class="btn btn-primary" onclick="Custom()" data-toggle="modal" data-target="#exampleModalCenter">Pay</a>
+                        </div>
+
+    
+
+
+
+                            </div>
+                          </div> <br>
+                    </form>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+        <br>
+
+         <!-- Modal -->
+        <div class="modal fade profileModal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Alert</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body" id="profileMsg">
+                <p></p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-wrappper">
+           <!-- Footer Start-->
+           <div class="footer-area footer-padding">
+               <div class="container">
+                       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                           <div class="single-footer-caption mb-50">
+                               <div class="footer-tittle">
+                                   <h4>Find out more here</h4>
+                                   <div class="footer-social">
+                                       <a href="https://twitter.com/hashtag/mealplanning?lang=en"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.facebook.com/groups/1072274259565166"><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <a href="https://www.pinterest.com/mealplanmom/_created/"><i class="fab fa-pinterest-p"></i></a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <!-- footer-bottom area -->
+       
+             <!-- Footer End-->
+         </div>
+       </footer>
+    <script>
+        var ApiURL = "http://tbankonline.com/SMUtBank_API/Gateway";
+        function getApiURL() {
+            return ApiURL;
+        }
+
+        function Custom() {
+            tier1 = 600;
+            tier2 = 1200;
+            price = 899;
+            choiceArray = [2,4,6];
+            choice = 1;
+            to = 8646;
+            var username = document.getElementById("Username").value;
+            var email = document.getElementById("email").value;
+            var tBankAcc = document.getElementById("tBankAcc").value;
+            var tBankID = document.getElementById("tBankID").value;
+            var tBankPIN = document.getElementById("tBankPIN").value;
+            var creditScore = document.getElementById("creditScore").value;
+            var transactionAmount = price / choiceArray[choice];
+            var transactionReferenceNumber = tBankAcc+to;
+            var narrative = "This is a " + choiceArray[choice] + "months loan";
+
+            //onload() CREATE BUTTON/DROPDOWN LIST
+            if (creditScore <= tier1) {
+             //2
+            } else if (creditScore <= tier2) {
+             // 2, 4
+            } else {
+             // 2, 4 , 6
+            }
+            var serviceName = "creditTransfer";
+            var headerObj = {
+                    Header: {
+                        serviceName: serviceName,
+                        userID: tBankID,
+                        PIN: tBankPIN,
+                        OTP: "999999"
+                    }
+                };
+            var contentObj = {
+                    Content: {
+                        accountFrom: tBankAcc,
+                        accountTo: to,
+                        transactionAmount: transactionAmount,
+                        transactionReferenceNumber: transactionReferenceNumber,
+                        narrative: narrative
+                    }
+                };
+        
+            var header = JSON.stringify(headerObj);
+            var content = JSON.stringify(contentObj);
+            var xmlHttp = new XMLHttpRequest();
+                if (xmlHttp === null){
+                    alert("Browser does not support HTTP request.");
+                    return;
+                }
+                xmlHttp.open("POST", getApiURL()+"?Header="+header+"&Content="+content, true);
+                xmlHttp.timeout = 5000;
+
+                // setup http event handlers
+                xmlHttp.onreadystatechange = function() {
+                    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                        responseObj = JSON.parse(xmlHttp.responseText);
+                        serviceRespHeader = responseObj.Content.ServiceResponse.ServiceRespHeader;
+                        globalErrorID = serviceRespHeader.GlobalErrorID;
+                        if (globalErrorID === "010041"){
+                            console.log("get otp")
+                            return;
+                        }
+                        else if (globalErrorID !== "010000"){
+                            console.log(serviceRespHeader.ErrorDetails);
+                            return;
+                        }
+                        
+                        // get data
+                        transactionID = responseObj.Content.ServiceResponse.TransactionID._content_;
+                        balanceBefore = responseObj.Content.ServiceResponse.BalanceBefore._content_;
+                        balanceAfter = responseObj.Content.ServiceResponse.BalanceAfter._content_;
+
+                        console.log(transactionID);
+                        console.log(balanceBefore);
+                        console.log(balanceAfter);
+
+                        // display data
+                        // document.getElementById("transactionID").value = transactionID;
+                        // document.getElementById("balanceBefore").value = addCommas(balanceBefore);
+                        // document.getElementById("balanceAfter").value = addCommas(balanceAfter);
+                        
+                        // enable Send button
+                        document.getElementById("Send").disabled = false;
+                    }
+                };
+                xmlHttp.ontimeout = function (e) {
+                    console.log("Timeout invoking API.");
+                    return;
+                };					
+
+                // send the http request
+                xmlHttp.send();
+        }
+    </script>
+    <!-- JS here -->
+    <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
+    <script type="text/javascript" src="./assets/js/logout.js"></script>
+    <script type="text/javascript" src="./assets/js/profile.js"></script>
+    
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- counter , waypoint, Hover Direction -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <script src="./assets/js/hover-direction-snake.min.js"></script>
+    
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+</body>
+
+</html>
