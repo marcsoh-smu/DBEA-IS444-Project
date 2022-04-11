@@ -1,3 +1,7 @@
 coverage
 
 .history
+
+./userDatabase/connectionManager.php
+
+DS_Store

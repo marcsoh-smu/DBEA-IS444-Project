@@ -149,6 +149,15 @@
                 <div class="col-6 contain">
                     <br>
                     <form>
+                        <div class="form-group">
+                            <!-- Hidden fields so that saving the credit score into the database works by referencing these account information using setUpProfile function-->
+                            <input type="hidden" class="form-control" name="Username" id="Username" value="">
+                            <input type="hidden" class="form-control" name="email" id="email" value="">
+                            <input type="hidden" class="form-control" name="tBankAcc" id="tBankAcc" value="">
+                            <input type="hidden" class="form-control" name="tBankID" id="tBankID" value="">
+                            <input type="hidden" class="form-control" name="tBankPIN" id="tBankPIN" value="">
+           
+               
                         <h3>My Portfolio:</h3>
                         <div class="container">
                             <div class="row">
@@ -226,7 +235,7 @@
 
                             <div class="row">
                                 <div class="col setUpButton">
-                                    <input type="button" class="btn btn-primary" onclick="calculate_score(); apply_loan_btn(); " value="Calculate" />
+                                    <input type="button" class="btn btn-primary" onclick="calculate_score(); apply_loan_btn(); setUpProfile();" value="Calculate" />
                                 </div>
     
                                 <div class="col" id="apply_btn">
@@ -294,7 +303,7 @@
     <!-- JS here -->
     <script type="text/javascript" src="./assets/js/checkStatus.js"></script>
     <script type="text/javascript" src="./assets/js/logout.js"></script>
-    <script type="text/javascript" src="./assets/js/profile.js"></script>
+    <script type="text/javascript" src="./assets/js/creditprofile.js"></script>
     <script type="text/javascript" src="./assets/js/creditScoreCal.js"></script>
     
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
