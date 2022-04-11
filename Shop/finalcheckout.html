@@ -58,7 +58,6 @@
     body {
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     background-color: rgb(219, 240, 239);
     font-size: 0.8rem
@@ -85,7 +84,6 @@
 }
 
 .card-body {
-    padding: 0 5rem 5rem 5rem;
     background-image: url("https://i.imgur.com/4bg1e6u.jpg");
     background-size: cover;
     background-repeat: no-repeat
@@ -211,9 +209,6 @@ input:focus::-webkit-input-placeholder {
     color: white
 }
 
-a {
-    color: black
-}
 
 a:hover {
     color: black;
@@ -260,7 +255,7 @@ fieldset {
 <!--Nav bar-->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: white;">
     <div class="container">
-        <a class="navbar-brand text-danger" href="Index.html">
+        <a class="navbar-brand text-danger" href="Index2.html">
             <img src="img/alan logo.png" width="70" alt="logo" class="img-fluid">
             <span class="font-weight-bold text-dark">Alan's</span>Furniture
         </a>
@@ -273,7 +268,7 @@ fieldset {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link pl-3" href="Index.html#form_container">Product Catalogue
+                    <a class="nav-link pl-3" href="Index2.html#form_container">Product Catalogue
                     </a>
                 </li>
 
@@ -283,7 +278,7 @@ fieldset {
 
                 
             </ul>
-            <a class="navbar-brand" href="./shoppingbag.html">
+            <a class="navbar-brand" href="./shoppingbagempty.html">
                 <div class="logo-image">
                       <img src="./img/shopping-cart.png" class="img-fluid">
                 </div>
@@ -295,86 +290,16 @@ fieldset {
     
 
     <!--Main Content-->
-    <div class="card">
-        <div class="card-top border-bottom text-center"> <a href="Index.html#form_container"> Back to shop</a> <span id="logo">Alan's Furniture</span> </div>
-        <div class="card-body">
-            <div class="row upper">
-                <span>
-                    <i class="fa fa-check-circle-o"></i>
-                    <a href="./shoppingbag.html">Shopping bag</a>
-                </span> 
-           <span id="payment"><span id="three">2</span>Payment</span> </div>
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="left border">
-                        <span class="header">Payment</span>
-                        <div style="margin-bottom: 10px">
-                            Based on your Credit Score of 595, You are eligible for Buy Now Pay Later Scheme</div>
-                        <div> 
-                            <button id="button1" type="button" class="btn-primary" onclick="showNormbank()">Pay With Bank Card</button>
-                            <button id="button2" type="button" class="btn-primary" onclick="showNarbank()">Pay with Narbank</button>
-                            <!--Show form if click onto narbank-->
-                            <div id="shownarbank" style="display: none;">
-                            
-                            <form action="thankyou.html" method="post" class="PaymentForm" id="PaymentForm">
-                                <fieldset>                            
-                                <p>
-                                    <label><input type="radio" name="mth" value="3331.35" /> 2 Months Installment</label>
-                                    <label><input type="radio" name="mth" value="1665.67" /> 4 Months Installment</label>
-                                    <label><input type="radio" name="mth" value="6662.69" checked="checked"/> Full Payment</label>
-                                </p>
-                                
-                                <p>
-                                   
-                                    <label>Total Payable Now: $ <input type="text" name="total" class="num" value="6662.69" readonly="readonly" /></label>
-                                </p>
-                                </fieldset>
-        
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email" value="">
-                                    <!--allow user to change this, put the original value in the field-->
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="tBankAcc">tBank Account</label>
-                                    <input type="text" class="form-control" name="tBankAcc" id="tBankAcc" value="">
-                                    <!--allow user to change this, put the original value in the field-->
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="tBankID">tBank ID</label>
-                                    <input type="text" class="form-control" name="tBankID" id="tBankID" value="">
-                                    <!--allow user to change this, put the original value in the field-->
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="tBankPIN">tBank PIN</label>
-                                    <input type="password" class="form-control" name="tBankPIN" id="tBankPIN" value="">
-                                    <!--allow user to change this, put the original value in the field-->
-                                </div>
-                                <button class="btn" id="narbankorder" onclick="payNar()" data-toggle="modal" data-target="#exampleModalCenter">Place order</button>
-
-                            </form>
-                        </div>
-                        </div>
-                        <div id="showNormBank" style="display: none;">
-                        <form action="thankyou.html"> <span>Name:</span> <input placeholder="Linda Williams"> <span>Account Number:</span> <input placeholder="0125 6780 4567 9909">
-                            <div class="row">
-                                <div class="col-4"><span>Expiry date:</span> <input placeholder="YY/MM"> </div>
-                                <div class="col-4"><span>CVV:</span> <input id="cvv"> </div>
-                            </div> <input type="checkbox" id="save_card" class="align-left"> <label for="save_card">Save card details to wallet</label>
-                            <button class="btn" id="normbankorder">Place order</button>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="right border">
-                        <div class="header">Order Summary</div>
-                        <p>1 item</p>
+    <div>
+           <h1 style="text-align:center">Thank you for buying with Alan's Furniture</h1>
+           <h2 style="text-align: center;">Your order has been processed</h2>
+           <!-- <img src="img/alan logo.png" width="170" style=" display: block;margin: 0 auto;"> -->
+            <link><h5 style="text-align: center;margin-top: 20px;"><a href="Index2.html"><u>Back to Alan's Furniture</u></a></link>
+           </h5>
+           <div class="header">Order Summary</div>
+                        <p>4 item</p>
                         <div class="row item">
-                            <div class="col-4 align-self-center"><img class="img-fluid" src="./img/bed1.png"></div>
+                            <div class="col-4 align-self-center"><img class="img-fluid" style="width:100px" src="./img/bed1.png"></div>
                             <div class="col-8">
                                 <div class="total-price" id="new_price">
                                 </div>
@@ -395,7 +320,7 @@ fieldset {
                             
                         </div>
                         <div class="row item">
-                            <div class="col-4 align-self-center"><img class="img-fluid" src="./img/dt1.png"></div>
+                            <div class="col-4 align-self-center"><img class="img-fluid"  style="width:100px" src="./img/dt1.png"></div>
                             <div class="col-8">
                                 <div class="row">$ 1019.99</div>
                                 <div class="row text-muted">Alan's 8 Seater Dining Table</div>
@@ -412,151 +337,34 @@ fieldset {
                             <div class="col text-right">Free</div>
                         </div>
                         <div class="row lower">
-                            <div class="col text-left"><b>Total to pay</b></div>
-                            <div class="col text-right"><b>$ 6662.69</b></div>
+                            <div class="col text-left"><b>Total paid (4 months Interest Free)</b></div>
+                            <div class="col text-right"><b>$ 1665.67</b></div>
+                            <button class="btn" id="bill">View Bill Transaction</button>
                         </div>
                         
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div> </div>
+                   
+          
+            <script type="text/javascript">
+             document.getElementById("bill").onclick = function () {
+             document.location.href = '../getTransactionHistory.html';
+            };
+            </script>
     </div>
+
+  
+    
 </body>
 <footer class="bg-light text-center text-lg-start">
     <!-- Copyright -->
-    <div class="text-center p-3">
+    <div class="text-center p-2">
       © 2022 Copyright:
-      <a class="text-dark" href="./Index.html">Alan's Furniture</a>
+      <a class="text-dark" href="./Index2.html">Alan's Furniture</a>
     </div>
     <!-- Copyright -->
   </footer>
 <script>
-    //if click onto narbank 
-    function showNarbank() {
-    document.getElementById('shownarbank').style.display = "block";
-    document.getElementById('showNormBank').style.display = "none";
-}
-
-    // if click onto normal bank 
-    function showNormbank() {
-    document.getElementById('showNormBank').style.display = "block";
-    document.getElementById('shownarbank').style.display = "none";
-}
-
-
-    // get list of radio buttons with name 'size'
-var sz = document.forms['PaymentForm'].elements['mth'];
-
-// loop through list
-for (var i=0, len=sz.length; i<len; i++) {
-    sz[i].onclick = function() { // assign onclick handler function to each
-        // put clicked radio button's value in total field
-        this.form.elements.total.value = this.value;
-    };
-}
-    //If click onto pay with full amount -->
     
-//Pay with Narbank API
-var ApiURL = "http://tbankonline.com/SMUtBank_API/Gateway";
-        function getApiURL() {
-            return ApiURL;
-        }
 
-        function Custom() {
-            tier1 = 600;
-            tier2 = 1200;
-            price = 6662.69;
-            choiceArray = [2,4,1];
-            choice = 1;
-            to = 8646;
-            var username = document.getElementById("Username").value;
-            var email = document.getElementById("email").value;
-            var tBankAcc = document.getElementById("tBankAcc").value;
-            var tBankID = document.getElementById("tBankID").value;
-            var tBankPIN = document.getElementById("tBankPIN").value;
-            var creditScore = document.getElementById("creditScore").value;
-            var transactionAmount = price / choiceArray[choice];
-            var transactionReferenceNumber = tBankAcc+to;
-            var narrative = "This is a " + choiceArray[choice] + "months loan";
-
-            //onload() CREATE BUTTON/DROPDOWN LIST
-            if (creditScore <= tier1) {
-             //2
-            } else if (creditScore <= tier2) {
-             // 2, 4
-            } else {
-             // 2, 4 , 6
-            }
-            var serviceName = "creditTransfer";
-            var headerObj = {
-                    Header: {
-                        serviceName: serviceName,
-                        userID: tBankID,
-                        PIN: tBankPIN,
-                        OTP: "999999"
-                    }
-                };
-            var contentObj = {
-                    Content: {
-                        accountFrom: tBankAcc,
-                        accountTo: to,
-                        transactionAmount: transactionAmount,
-                        transactionReferenceNumber: transactionReferenceNumber,
-                        narrative: narrative
-                    }
-                };
-        
-            var header = JSON.stringify(headerObj);
-            var content = JSON.stringify(contentObj);
-            var xmlHttp = new XMLHttpRequest();
-                if (xmlHttp === null){
-                    alert("Browser does not support HTTP request.");
-                    return;
-                }
-                xmlHttp.open("POST", getApiURL()+"?Header="+header+"&Content="+content, true);
-                xmlHttp.timeout = 5000;
-
-                // setup http event handlers
-                xmlHttp.onreadystatechange = function() {
-                    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-                        responseObj = JSON.parse(xmlHttp.responseText);
-                        serviceRespHeader = responseObj.Content.ServiceResponse.ServiceRespHeader;
-                        globalErrorID = serviceRespHeader.GlobalErrorID;
-                        if (globalErrorID === "010041"){
-                            console.log("get otp")
-                            return;
-                        }
-                        else if (globalErrorID !== "010000"){
-                            console.log(serviceRespHeader.ErrorDetails);
-                            return;
-                        }
-                        
-                        // get data
-                        transactionID = responseObj.Content.ServiceResponse.TransactionID._content_;
-                        balanceBefore = responseObj.Content.ServiceResponse.BalanceBefore._content_;
-                        balanceAfter = responseObj.Content.ServiceResponse.BalanceAfter._content_;
-
-                        console.log(transactionID);
-                        console.log(balanceBefore);
-                        console.log(balanceAfter);
-
-                        // display data
-                        // document.getElementById("transactionID").value = transactionID;
-                        // document.getElementById("balanceBefore").value = addCommas(balanceBefore);
-                        // document.getElementById("balanceAfter").value = addCommas(balanceAfter);
-                        
-                        // enable Send button
-                        document.getElementById("Send").disabled = false;
-                    }
-                };
-                xmlHttp.ontimeout = function (e) {
-                    console.log("Timeout invoking API.");
-                    return;
-                };					
-
-                // send the http request
-                xmlHttp.send();
-        }
+ 
 </script>
 </html>
