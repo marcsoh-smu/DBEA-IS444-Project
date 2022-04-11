@@ -211,7 +211,7 @@ function apply_loan_btn() {
   } else if (creditScore < 600) {
 
     myDiv.setAttribute("type", "hidden");
-    myDiv.innerHTML = "<p>Sorry, you are not eligible for loan.</p>";
+    myDiv.innerHTML = `<p style="color:red;">Sorry, you are not eligible for loan.</p>`;
     
     var str = `<div class = "col"><input type="button" class="btn btn-primary" value="recommend" onclick="recommend();"/></div>`;
     recommend.innerHTML = str;
